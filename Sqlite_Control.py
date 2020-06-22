@@ -93,7 +93,8 @@ DATE 日期， 形如"2018-11-08"
 class Sqlite_Control():
 
     def __init__(self, DB_Name='test.db'):
-        self.connect = sqlite3.connect(DB_Name)  # 這裡是連線上一個資料庫“test.db”如果沒有這個資料庫的話就會建立一個
+        self.DB_Name=DB_Name
+        self.connect = sqlite3.connect(DB_Name,check_same_thread=False)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
         self.cursor = self.connect.cursor()  # 獲取遊標cursor
         print('Sqlite_Control - Database Ready','\n')
 

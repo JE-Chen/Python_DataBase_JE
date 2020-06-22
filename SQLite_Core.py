@@ -3,7 +3,7 @@ from SQLite_Secure import SQLite_Secure
 
 class SQLite_Core():
 
-    def __init__(self,DB_Name='test.db'):
+    def __init__(self,DB_Name='test'):
         try:
             self.Sqlite_Control=Sqlite_Control(DB_Name)
             self.SQLite_Secure=SQLite_Secure()
@@ -76,7 +76,7 @@ class SQLite_Core():
             Search_Option = args[0]
             Table_Name = args[1]
             SQL_Command = """SELECT """ + Search_Option + """ from """ + Table_Name + """;"""
-        self.Sqlite_Control.Select_From(self.SQLite_Secure.Check(SQL_Command))
+        return self.Sqlite_Control.Select_From(self.SQLite_Secure.Check(SQL_Command))
 
     # select * from  表名 where   加上條件，不加的話就是查詢所有
     # SQL_Command= """SELECT * FROM student WHERE name="小明";"""
@@ -89,7 +89,7 @@ class SQLite_Core():
             Select_Table = args[1]
             Select_Where = args[2]
             SQL_Command = """SELECT """ + Select_Thing + """ FROM """ + Select_Table + """ WHERE """ + Select_Where + """;"""
-        self.Sqlite_Control.Select_Where(self.SQLite_Secure.Check(SQL_Command))
+        return self.Sqlite_Control.Select_Where(self.SQLite_Secure.Check(SQL_Command))
 # ----------------------------------------------------------------------------------------------
     # 更新資料庫語句 update 加表名 set 欄位名=要更新的值  where 限定條件 ，如果不加where 和後面的條件，將會全部生效
     # SQL_Command="""UPDATE student SET name="大紅" WHERE id=1;"""
