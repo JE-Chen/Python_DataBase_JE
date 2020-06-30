@@ -11,9 +11,6 @@ class SQLite_Core():
             raise Errr
         print('SQLite_Core Ready','\n')
 
-        self.SQLite_Cursor = self.Sqlite_Control.cursor
-        self.SQLite_Connect = self.Sqlite_Control.connect
-
 # ----------------------------------------------------------------------------------------------
     # 創造一表
     # """CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY,name VARCHAR(10));"""
