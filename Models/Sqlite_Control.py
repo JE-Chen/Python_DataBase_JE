@@ -1,4 +1,5 @@
 import sqlite3
+import datetime
 
 '''
 1.整數
@@ -96,13 +97,12 @@ class Sqlite_Control():
         self.DB_Name=DB_Name
         self.connect = sqlite3.connect(DB_Name,check_same_thread=False)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
         self.cursor = self.connect.cursor()  # 獲取遊標cursor
-        print('Sqlite_Control - Database Ready','\n')
 
     # ----------------------------------------------------------------------------------------------
     # 創造一表
     # """CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY,name VARCHAR(10));"""
     def Create_Table(self, SQL_Command):
-        print('Sqlite_Control - Create_Table : ',SQL_Command,'\n')
+        print('I JE-Database exec','Sqlite_Control - Create_Table : ',SQL_Command,' in ',datetime.datetime.now(),' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()  # 進行資料庫語句的提交操作，不提交則無法生效，每次執行後都要提交
 
@@ -110,36 +110,39 @@ class Sqlite_Control():
     # 插入語句是insert into 加表名 （欄位名， 欄位名）values （對應的值， 對應的值）因為id是主鍵自增，所以就沒有新增他的值
     # SQL_Command="""INSERT INTO student(name) VALUES ("小明");"""
     def Insert_Into(self, SQL_Command):
-        print('Sqlite_Control - Insert_Into : ',SQL_Command,'\n')
+        print('I JE-Database exec','Sqlite_Control - Insert_Into : ',SQL_Command,' in ',datetime.datetime.now(),' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
     # 如果有會忽略
     # SQL_Command="""INSERT OR IGNORE INTO student(name) VALUES ("小明");"""
     def Insert_Into_Ignore(self,SQL_Command):
-        print('Sqlite_Control - Insert_Into_Ignore : ',SQL_Command,'\n')
+        print('I JE-Database exec','Sqlite_Control - Insert_Into_Ignore : ',SQL_Command,' in ',datetime.datetime.now(),' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
     # 如果有會取代掉
     # SQL_Command="""INSERT OR REPLACE INTO student(name) VALUES ("小明");"""
     def Insert_Into_Replace(self, SQL_Command):
-        print('Sqlite_Control - Insert_Into_Replace : ',SQL_Command,'\n')
+        print('I JE-Database exec','Sqlite_Control - Insert_Into_Replace : ',SQL_Command,' in ',datetime.datetime.now(),' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
+
 
 # ----------------------------------------------------------------------------------------------
     # 查詢語句select 加欄位名 查詢表中欄位的資訊 加* 查詢所有的資訊   from 表名
     # SQL_Command="""SELECT id,name from student;"""
     def Select_From(self, SQL_Command):
+        print('I JE-Database exec', 'Sqlite_Control - Select_From : ', SQL_Command, ' in ',datetime.datetime.now(), ' \n')
         self.cursor.execute(SQL_Command)
         Result_List = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
-        print('Sqlite_Control - Select_From Result : ', Result_List,'\n')
+        print('Sqlite_Control - Select_From Result_List : ', Result_List,'\n')
         return Result_List  # 查詢的結果
 
     # select * from  表名 where   加上條件，不加的話就是查詢所有
     # SQL_Command= """SELECT * FROM student WHERE name="小明";"""
     def Select_Where(self, SQL_Command):
+        print('I JE-Database exec', 'Sqlite_Control - Select_Where : ', SQL_Command, ' in ',datetime.datetime.now(), ' \n')
         self.cursor.execute(SQL_Command)
         Result = self.cursor.fetchone()  # fetchone ()是查詢一個，只有一個結果和fetchall有區別
         print('Sqlite_Control - Select_Where Result : ', Result,'\n')
@@ -149,7 +152,7 @@ class Sqlite_Control():
     # 更新資料庫語句 update 加表名 set 欄位名=要更新的值  where 限定條件 ，如果不加where 和後面的條件，將會全部生效
     # SQL_Command="""UPDATE student SET name="大紅" WHERE id=1;"""
     def UPDATE(self,SQL_Command):
-        print('Sqlite_Control - UPDATE : ', SQL_Command,'\n')
+        print('I JE-Database exec', 'Sqlite_Control - UPDATE : ', SQL_Command, ' in ',datetime.datetime.now(), ' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
@@ -157,7 +160,7 @@ class Sqlite_Control():
     # 刪除語句   delete from 表名 where 範圍，不加where將會刪除整個表但是表的結構還存在就是相當於回到了剛剛建立表的時候
     # SQL_Command= """DELETE FROM student WHERE id = 1;"""
     def DELETE(self, SQL_Command):
-        print('Sqlite_Control - DELETE : ', SQL_Command ,'\n')
+        print('I JE-Database exec', 'Sqlite_Control - DELETE : ', SQL_Command, ' in ',datetime.datetime.now(), ' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
@@ -165,7 +168,7 @@ class Sqlite_Control():
     # 丟棄表
     # SQL_Command="""DROP TABLE student;"""
     def Drop(self, SQL_Command):
-        print('Sqlite_Control - Drop : ',SQL_Command,'\n')
+        print('I JE-Database exec', 'Sqlite_Control - Drop : ', SQL_Command, ' in ',datetime.datetime.now(), ' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
@@ -173,6 +176,6 @@ class Sqlite_Control():
 
     # 關閉
     def Close(self):
-        print('Sqlite_Control - Database Close \n')
+        print('I JE-Database exec', 'Sqlite_Control - Close : ',' in ',datetime.datetime.now(), ' \n')
         self.cursor.close()  # 關閉遊標
         self.connect.close()  # 關閉資料庫連線，在進行完操作之後需要將遊標和連線關閉
