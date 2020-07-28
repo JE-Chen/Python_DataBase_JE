@@ -98,7 +98,7 @@ class Sqlite_Control():
         self.connect = sqlite3.connect(DB_Name,check_same_thread=False)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
         self.cursor = self.connect.cursor()  # 獲取遊標cursor
 
-    # ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
     # 創造一表
     # """CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY,name VARCHAR(10));"""
     def Create_Table(self, SQL_Command):
@@ -106,7 +106,7 @@ class Sqlite_Control():
         self.cursor.execute(SQL_Command)
         self.connect.commit()  # 進行資料庫語句的提交操作，不提交則無法生效，每次執行後都要提交
 
-    # ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
     # 插入語句是insert into 加表名 （欄位名， 欄位名）values （對應的值， 對應的值）因為id是主鍵自增，所以就沒有新增他的值
     # SQL_Command="""INSERT INTO student(name) VALUES ("小明");"""
     def Insert_Into(self, SQL_Command):
@@ -114,12 +114,16 @@ class Sqlite_Control():
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
+# ----------------------------------------------------------------------------------------------
+
     # 如果有會忽略
     # SQL_Command="""INSERT OR IGNORE INTO student(name) VALUES ("小明");"""
     def Insert_Into_Ignore(self,SQL_Command):
         print('I JE-Database exec','Sqlite_Control - Insert_Into_Ignore : ',SQL_Command,' in ',datetime.datetime.now(),' \n')
         self.cursor.execute(SQL_Command)
         self.connect.commit()
+
+# ----------------------------------------------------------------------------------------------
 
     # 如果有會取代掉
     # SQL_Command="""INSERT OR REPLACE INTO student(name) VALUES ("小明");"""
@@ -139,6 +143,18 @@ class Sqlite_Control():
         print('Sqlite_Control - Select_From Result_List : ', Result_List,'\n')
         return Result_List  # 查詢的結果
 
+# ----------------------------------------------------------------------------------------------
+    #找出表格不同的值
+    def Select_Distinct(self,SQL_Command):
+        print('I JE-Database exec','Sqlite_Control - Select_Distinct : ',SQL_Command,' in ',datetime.datetime.now(),' \n')
+        self.cursor.execute(SQL_Command)
+        Result_List = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
+        print('Sqlite_Control - Select_Distinct Result_List : ', Result_List, '\n')
+        return Result_List  # 查詢的結果
+
+
+# ----------------------------------------------------------------------------------------------
+
     # select * from  表名 where   加上條件，不加的話就是查詢所有
     # SQL_Command= """SELECT * FROM student WHERE name="小明";"""
     def Select_Where(self, SQL_Command):
@@ -156,7 +172,7 @@ class Sqlite_Control():
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
     # 刪除語句   delete from 表名 where 範圍，不加where將會刪除整個表但是表的結構還存在就是相當於回到了剛剛建立表的時候
     # SQL_Command= """DELETE FROM student WHERE id = 1;"""
     def DELETE(self, SQL_Command):
@@ -172,7 +188,7 @@ class Sqlite_Control():
         self.cursor.execute(SQL_Command)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------
 
     # 關閉
     def Close(self):
