@@ -1,30 +1,30 @@
 from Core.SQLite_Core import SQLite_Core
 
-a=SQLite_Core(r'..\Test_Source\test.db')
+SQL=SQLite_Core(r'..\Test_Source\test.db',Table_Name='Time')
 
-a.Create_Table('hello','name VARCHAR(10)')
+SQL.Create_Table('CREATE TABLE IF NOT EXISTS Time(id INTEGER PRIMARY KEY,name VARCHAR(10))')
 
-a.Insert_Into_Ignore('hello','(id,name)','1,"小明"')
+SQL.Values_Count = 2
 
-a.Select_From("id,name","hello")
+SQL.Insert_Into_Replace(1,'小紅')
 
-a.Select_Where('*','hello','name="小明"')
+SQL.Select_From('id','name')
 
-a.UPDATE('hello','name="大紅"','id=1')
+SQL.Insert_Into_Replace(2,'小杯')
 
-a.Select_From("id,name","hello")
+SQL.DELETE('name','小杯')
 
-a.Insert_Into_Replace('hello','(id,name)','2,"小明"')
+SQL.Insert_Into_Replace(3,'哭阿')
 
-a.Select_From("id,name","hello")
+SQL.Values_Count = 1
 
-a.DELETE('hello','id=2')
+SQL.Select_Distinct('name')
 
-a.Select_From("id,name","hello")
+SQL.Values_Count = 1
 
-a.Select_Distinct("name","hello")
+SQL.Select_Where('name','name','哭阿')
 
-a.Close()
+SQL.Close()
 
 
 
