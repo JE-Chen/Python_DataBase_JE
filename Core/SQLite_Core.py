@@ -16,8 +16,6 @@ class SQLite_Core():
             raise Errr
 
         self.Table_Name = Table_Name
-        self.Values_Count = 1
-
         self.SQLite_Cursor = self.Sqlite_Control.cursor
         self.SQLite_Connect = self.Sqlite_Control.connect
 
@@ -48,17 +46,15 @@ class SQLite_Core():
     def Insert_Into(self, *args, Field=None):
 
         if Field == None:
-            if self.Values_Count == 1:
+            if len(args) == 1 :
                 SQL_Command = '''INSERT INTO ''' + self.Table_Name + ''' VALUES (?)'''
             else:
-                SQL_Command = '''INSERT INTO ''' + self.Table_Name + ''' VALUES (''' + '?,' * (
-                            self.Values_Count - 1) + '?' + ''')'''
+                SQL_Command = '''INSERT INTO ''' + self.Table_Name + ''' VALUES (''' + '?,' * (len(args)-1) + '?' + ''')'''
         else:
-            if self.Values_Count == 1:
+            if len(args) == 1:
                 SQL_Command = '''INSERT INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (?)'''
             else:
-                SQL_Command = '''INSERT INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (''' + '?,' * (
-                            self.Values_Count - 1) + '?' + ''')'''
+                SQL_Command = '''INSERT INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (''' + '?,' * (len(args)-1) + '?' + ''')'''
 
         self.Sqlite_Control.Insert_Into(SQL_Command, args)
 
@@ -68,36 +64,31 @@ class SQLite_Core():
     def Insert_Into_Ignore(self, *args, Field=None):
 
         if Field == None:
-            if self.Values_Count == 1:
+            if len(args) == 1:
                 SQL_Command = '''INSERT OR IGNORE INTO ''' + self.Table_Name + ''' VALUES (?)'''
             else:
-                SQL_Command = '''INSERT OR IGNORE INTO ''' + self.Table_Name + ''' VALUES (''' + '?,' * (
-                            self.Values_Count - 1) + '?' + ''')'''
+                SQL_Command = '''INSERT OR IGNORE INTO ''' + self.Table_Name + ''' VALUES (''' + '?,' * (len(args)-1) + '?' + ''')'''
         else:
-            if self.Values_Count == 1:
+            if len(args) == 1:
                 SQL_Command = '''INSERT OR IGNORE INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (?)'''
             else:
-                SQL_Command = '''INSERT OR IGNORE INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (''' + '?,' * (
-                            self.Values_Count - 1) + '?' + ''')'''
+                SQL_Command = '''INSERT OR IGNORE INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (''' + '?,' * (len(args)-1) + '?' + ''')'''
 
         self.Sqlite_Control.Insert_Into_Ignore(SQL_Command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 如果有會取代掉
     def Insert_Into_Replace(self, *args, Field=None):
-
         if Field == None:
-            if self.Values_Count == 1:
+            if len(args) == 1:
                 SQL_Command = '''REPLACE INTO ''' + self.Table_Name + ''' VALUES (?)'''
             else:
-                SQL_Command = '''REPLACE INTO ''' + self.Table_Name + ''' VALUES (''' + '?,' * (
-                            self.Values_Count - 1) + '?' + ''')'''
+                SQL_Command = '''REPLACE INTO ''' + self.Table_Name + ''' VALUES (''' + '?,' * (len(args)-1) + '?' + ''')'''
         else:
-            if self.Values_Count == 1:
+            if len(args) == 1:
                 SQL_Command = '''REPLACE INTO ''' + self.Table_Name + '''(''' + Field + ''')VALUES (?)'''
             else:
-                SQL_Command = '''REPLACE INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (''' + '?,' * (
-                            self.Values_Count - 1) + '?' + ''')'''
+                SQL_Command = '''REPLACE INTO ''' + self.Table_Name + '''(''' + Field + ''') VALUES (''' + '?,' * (len(args)-1) + '?' + ''')'''
 
         self.Sqlite_Control.Insert_Into_Replace(SQL_Command, args)
 
@@ -118,22 +109,21 @@ class SQLite_Core():
     # 查詢語句select 加欄位名 查詢表中欄位的資訊 加* 查詢所有的資訊 from 表名
     # SQL_Command="""SELECT id,name from student;"""
     def Select_From(self, *args):
-        if self.Values_Count == 1:
+        if len(args) == 1:
             SQL_Command = '''SELECT ? FROM ''' + self.Table_Name
             return self.Sqlite_Control.Select_From(SQL_Command, args)
         else:
-            SQL_Command = '''SELECT ''' + '?,' * (self.Values_Count - 1) + '?' + ''' FROM ''' + self.Table_Name
+            SQL_Command = '''SELECT ''' + '?,' * (len(args)-1) + '?' + ''' FROM ''' + self.Table_Name
             return self.Sqlite_Control.Select_From(SQL_Command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 找出表格不同的值
     def Select_Distinct(self, *args):
-
-        if self.Values_Count == 1:
+        if len(args) == 1:
             SQL_Command = '''SELECT DISTINCT ? FROM ''' + self.Table_Name
             return self.Sqlite_Control.Select_Distinct(SQL_Command, args)
         else:
-            SQL_Command = '''SELECT DISTINCT''' + '?,' * (self.Values_Count - 1) + '?' + ''' FROM ''' + self.Table_Name
+            SQL_Command = '''SELECT DISTINCT''' + '?,' * (len(args)-1) + '?' + ''' FROM ''' + self.Table_Name
             return self.Sqlite_Control.Select_Distinct(SQL_Command, args)
 
     # ----------------------------------------------------------------------------------------------
@@ -141,12 +131,11 @@ class SQLite_Core():
     # select * from  表名 where   加上條件，不加的話就是查詢所有
     # SQL_Command= """SELECT * FROM student WHERE name="小明";"""
     def Select_Where(self, Field, *args):
-        if self.Values_Count == 1:
+        if len(args) == 1:
             SQL_Command = '''SELECT ? FROM ''' + self.Table_Name + ''' WHERE ''' + Field + '''=?'''
             return self.Sqlite_Control.Select_Where(Field, SQL_Command, args)
         else:
-            SQL_Command = '''SELECT ''' + '?,' * (
-                        self.Values_Count - 1) + '?' + ''' FROM ''' + self.Table_Name + ''' WHERE ''' + Field + '''=?'''
+            SQL_Command = '''SELECT ''' + '?,' * (len(args)-2) + '?' + ''' FROM ''' + self.Table_Name + ''' WHERE ''' + Field + '''=?'''
             return self.Sqlite_Control.Select_Where(Field, SQL_Command, args)
 
     # ----------------------------------------------------------------------------------------------
