@@ -1,4 +1,4 @@
-from Core.SQLite_Core import SQLite_Core
+from JEDatabase.Core import SQLite_Core
 
 SQL=SQLite_Core(r'..\Test_Source\test.db',Table_Name='Time')
 
