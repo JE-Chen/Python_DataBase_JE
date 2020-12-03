@@ -30,11 +30,6 @@ class SQLite_Core():
         self.Value_Count = Value_Count
         self.Sqlite_Control.Value_Count=Value_Count
     # ----------------------------------------------------------------------------------------------
-    def ValueError_Log(self, Print):
-        print(datetime.datetime.now(), 'I JE-Database Error', sep=' ')
-        raise ValueError(Print)
-
-    # ----------------------------------------------------------------------------------------------
 
     # 創造一表
     def Create_Table(self, SQL_Command):

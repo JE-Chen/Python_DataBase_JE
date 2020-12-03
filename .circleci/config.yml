@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run:
           command: pip install --user JEDatabase
-          name: pipSomething
+          name: pip JEDatabase
       - run:
           command: python Test/SQL_Test.py
           name: Test
