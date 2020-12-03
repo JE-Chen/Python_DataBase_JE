@@ -16,7 +16,8 @@ DOUBLE(8位元組) 雙精度小數。
 CHAR char(10) 可以儲存長度（位元組長度）不超過10的字串。例如"hello"。但由於長度按照位元組判斷，存unicode編碼的中文只能存3個。
 常用 VARCHAR 0-65535位元組，variable char 可變字串。VARCHAR(5) 可以儲存5箇中文或5個英文字母。場景 使用者名稱、家庭住址。
 TEXT TINYTEXT medium longtext ， 場景 大文字儲存，書籍文章、使用者反饋。
-BLOB medium longblob ，二進位制檔案， 場景 圖片、視訊。但一般不在資料庫中儲存圖片和視訊，因為會增加資料庫的計算壓力和頻寬傳輸壓力和備份還原的難度和使用者資訊靜態資源耦合到一起，解決方案是 圖片視訊存到普通檔案目錄下，資料庫中儲存檔案路徑。
+BLOB medium longblob ，二進位制檔案， 場景 圖片、視訊。但一般不在資料庫中儲存圖片和視訊，
+因為會增加資料庫的計算壓力和頻寬傳輸壓力和備份還原的難度和使用者資訊靜態資源耦合到一起，解決方案是 圖片視訊存到普通檔案目錄下，資料庫中儲存檔案路徑。
 
 4.日期
 DATE 日期， 形如"2018-11-08"
@@ -91,22 +92,22 @@ DATE 日期， 形如"2018-11-08"
 '''
 
 
-class Sqlite_Control():
+class SqliteControl:
 
-    def __init__(self, DB_Name='test.db', Table_Name='Test'):
-        self.DB_Name = DB_Name
-        self.Table_Name = Table_Name
-        self.Valute_Count = 1
-        self.connect = sqlite3.connect(DB_Name, check_same_thread=False)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
+    def __init__(self, db_name='test.db', table_name='Test'):
+        self.db_name = db_name
+        self.table_name = table_name
+        self.value_count = 1
+        self.connect = sqlite3.connect(db_name, check_same_thread=False)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
         self.cursor = self.connect.cursor()  # 獲取遊標cursor
 
     # ----------------------------------------------------------------------------------------------
     # 創造一表
     # """CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY,name VARCHAR(10));"""
-    def Create_Table(self, SQL_Command):
-        print('I JE-Database exec', 'Sqlite_Control - Create_Table : ', SQL_Command, ' in ', datetime.datetime.now(),
+    def create_table(self, sql_command):
+        print('I JE-Database exec', 'Sqlite_Control - Create_Table : ', sql_command, ' in ', datetime.datetime.now(),
               ' \n', sep='  ')
-        self.cursor.execute(SQL_Command)
+        self.cursor.execute(sql_command)
         self.connect.commit()  # 進行資料庫語句的提交操作，不提交則無法生效，每次執行後都要提交
 
     # ----------------------------------------------------------------------------------------------
@@ -149,7 +150,7 @@ class Sqlite_Control():
         Str_List = self.cursor.fetchall()
         Format_String = str(Str_List[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
         if Format_String.endswith(","): Format_String = Format_String[:-1]
-        Result_List += self.cursor.execute('SELECT ' + Format_String + ' FROM ' + self.Table_Name).fetchall()
+        Result_List += self.cursor.execute('SELECT ' + Format_String + ' FROM ' + self.table_name).fetchall()
         print('Sqlite_Control - Select_From Result_List : ', Result_List, '\n')
         return Result_List  # 查詢的結果
 
@@ -163,7 +164,7 @@ class Sqlite_Control():
         Str_List = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
         Format_String = str(Str_List[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
         if Format_String.endswith(","): Format_String = Format_String[:-1]
-        Result_List += self.cursor.execute('SELECT Distinct ' + Format_String + ' FROM ' + self.Table_Name).fetchall()
+        Result_List += self.cursor.execute('SELECT Distinct ' + Format_String + ' FROM ' + self.table_name).fetchall()
         print('Sqlite_Control - Select_Distinct Result_List : ', Result_List, '\n')
         return Result_List
 
@@ -184,8 +185,8 @@ class Sqlite_Control():
             Format_String.split(',')
         print(Format_String, 'Format_String')
         Result_List += self.cursor.execute(
-                'SELECT ' + Format_String + ' FROM ' + self.Table_Name + ''' WHERE ''' + Format_String + '''="''' + str(
-                args[len(args)-self.Valute_Count])+'''"''').fetchall()
+            'SELECT ' + Format_String + ' FROM ' + self.table_name + ''' WHERE ''' + Format_String + '''="''' + str(
+                args[len(args) - self.value_count]) + '''"''').fetchall()
         print('Sqlite_Control - Select_Where Result_List : ', Result_List, '\n')
         return Result_List
 

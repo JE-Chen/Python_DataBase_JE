@@ -1,24 +1,21 @@
-from JEDatabase.Core import SQLite_Core
+from JEDatabase.Core.SQLiteCore import SQLiteCore
 
-SQL=SQLite_Core(r'..\Test_Source\Account.db',Table_Name='Account')
+SQL = SQLiteCore(r'..\Test_Source\Account.db', table_name='Account')
 
-SQL.Create_Table('CREATE TABLE IF NOT EXISTS Account(id INTEGER PRIMARY KEY,email VARCHAR(50),password VARCHAR(15))')
+SQL.create_table('CREATE TABLE IF NOT EXISTS Account(id INTEGER PRIMARY KEY,email VARCHAR(50),password VARCHAR(15))')
 
-SQL.Insert_Into_Replace(1,'test1@gmail.com','test_password')
+SQL.insert_into_replace(1, 'test1@gmail.com', 'test_password')
 
-SQL.Select_From('id','email')
+SQL.select_form('id', 'email')
 
-SQL.Insert_Into_Replace(2,'test2@gmail.com','test_password')
+SQL.insert_into_replace(2, 'test2@gmail.com', 'test_password')
 
-SQL.DELETE('email','test1@gmail.com')
+SQL.delete('email', 'test1@gmail.com')
 
-SQL.Insert_Into_Replace(3,'test3@gmail.com','test_password')
+SQL.insert_into_replace(3, 'test3@gmail.com', 'test_password')
 
-SQL.Select_Distinct('email')
+SQL.select_distinct('email')
 
-SQL.Select_Where('email','email','test3@gmail.com')
+SQL.select_where('email', 'email', 'test3@gmail.com')
 
-SQL.Close()
-
-
-
+SQL.close()

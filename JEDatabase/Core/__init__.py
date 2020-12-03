@@ -1,1 +1,1 @@
-from JEDatabase.Core.SQLite_Core import SQLite_Core
+from JEDatabase.Core.SQLiteCore import SQLiteCore
