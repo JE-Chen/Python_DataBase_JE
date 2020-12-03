@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Account" uuid="824070f5-99de-46a1-bad2-d2b9dd7fdda4">
+    <data-source source="LOCAL" name="Account" uuid="4f578a60-a5ea-4ea9-a548-27b543951eaf">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test_Source\Account.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Account.sqlite</jdbc-url>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>

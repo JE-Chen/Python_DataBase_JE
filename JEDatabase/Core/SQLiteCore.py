@@ -7,7 +7,7 @@ from JEDatabase.Models.SqliteControl import SqliteControl
 
 class SQLiteCore:
 
-    def __init__(self, db_name: str = 'test.db', table_name: str = 'Test'):
+    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'Test'):
         """
         :type db_name: str
         :type table_name: str
@@ -60,7 +60,7 @@ class SQLiteCore:
                 sql_command = '''INSERT INTO ''' + self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * (
                         len(args) - 1) + '?' + ''')'''
 
-        self.SqliteControl.Insert_Into(sql_command, args)
+        self.SqliteControl.insert_into(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ class SQLiteCore:
                               self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * \
                               (len(args) - 1) + '?' + ''')'''
 
-        self.SqliteControl.Insert_Into_Ignore(sql_command, args)
+        self.SqliteControl.insert_into_ignore(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 如果有會取代掉
@@ -99,20 +99,20 @@ class SQLiteCore:
                 sql_command = '''REPLACE INTO ''' + self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * (
                         len(args) - 1) + '?' + ''')'''
 
-        self.SqliteControl.Insert_Into_Replace(sql_command, args)
+        self.SqliteControl.insert_into_replace(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 更新資料庫語句
     def update(self, *args, field, where_what=None):
         sql_command = '''UPDATE ''' + self.table_name + ''' SET ''' + field + '''=? WHERE ''' + where_what + '''=?'''
-        self.SqliteControl.UPDATE(sql_command, args)
+        self.SqliteControl.update(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 刪除語句   delete from 表名 where 範圍，不加where將會刪除整個表但是表的結構還存在就是相當於回到了剛剛建立表的時候
     # SQL_Command= """DELETE FROM student WHERE id = 1;"""
     def delete(self, field, *args):
         sql_command = '''DELETE FROM ''' + self.table_name + ''' WHERE ''' + field + ''' =? '''
-        self.SqliteControl.DELETE(sql_command, args)
+        self.SqliteControl.delete(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 查詢語句select 加欄位名 查詢表中欄位的資訊 加* 查詢所有的資訊 from 表名
@@ -120,20 +120,20 @@ class SQLiteCore:
     def select_form(self, *args):
         if len(args) == 1:
             sql_command = '''SELECT ? FROM ''' + self.table_name
-            return self.SqliteControl.Select_From(sql_command, args)
+            return self.SqliteControl.select_from(sql_command, args)
         else:
             sql_command = '''SELECT ''' + '?,' * (len(args) - 1) + '?' + ''' FROM ''' + self.table_name
-            return self.SqliteControl.Select_From(sql_command, args)
+            return self.SqliteControl.select_from(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
     # 找出表格不同的值
     def select_distinct(self, *args):
         if len(args) == 1:
             sql_command = '''SELECT DISTINCT ? FROM ''' + self.table_name
-            return self.SqliteControl.Select_Distinct(sql_command, args)
+            return self.SqliteControl.select_distinct(sql_command, args)
         else:
             sql_command = '''SELECT DISTINCT''' + '?,' * (len(args) - 1) + '?' + ''' FROM ''' + self.table_name
-            return self.SqliteControl.Select_Distinct(sql_command, args)
+            return self.SqliteControl.select_distinct(sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
 
@@ -142,17 +142,17 @@ class SQLiteCore:
     def select_where(self, field, *args):
         if len(args) == 1:
             sql_command = '''SELECT ? FROM ''' + self.table_name + ''' WHERE ''' + field + '''=?'''
-            return self.SqliteControl.Select_Where(field, sql_command, args)
+            return self.SqliteControl.select_where(field, sql_command, args)
         else:
             sql_command = '''SELECT ''' + '?,' * (
                     len(args) - 2) + '?' + ''' FROM ''' + self.table_name + ''' WHERE ''' + field + '''=?'''
-            return self.SqliteControl.Select_Where(field, sql_command, args)
+            return self.SqliteControl.select_where(field, sql_command, args)
 
     # ----------------------------------------------------------------------------------------------
 
     # 回滾到上一次commit
     def rollback(self):
-        self.SqliteControl.Rollback()
+        self.SqliteControl.rollback()
 
     # ----------------------------------------------------------------------------------------------
 
@@ -160,10 +160,10 @@ class SQLiteCore:
     # SQL_Command="""DROP TABLE student;"""
     def drop(self):
         sql_command = '''DROP TABLE ''' + self.table_name + '''=?'''  # 丟棄表（此操作比delete更加嚴重，會刪除表的結構）drop table 加上表名
-        self.SqliteControl.Drop(sql_command, self.table_name)
+        self.SqliteControl.drop(sql_command, self.table_name)
 
     # ----------------------------------------------------------------------------------------------
 
     # 關閉
     def close(self):
-        self.SqliteControl.Close()
+        self.SqliteControl.close()
