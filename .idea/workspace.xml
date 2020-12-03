@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Python_DataBase_JE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python_DataBase_JE.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/824070f5-99de-46a1-bad2-d2b9dd7fdda4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb869afa-472c-4375-bebe-330ba2a71d0e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_Source/Account.db" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Source/Account.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606983586203</updated>
-      <workItem from="1606983587338" duration="2626000" />
+      <workItem from="1606983587338" duration="3203000" />
     </task>
     <servers />
   </component>
