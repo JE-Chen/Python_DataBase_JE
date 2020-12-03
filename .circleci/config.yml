@@ -12,6 +12,9 @@ jobs:
           command: pip install --user JEDatabase
           name: pip JEDatabase
       - run:
+          command: pip install --user JELogSystem
+          name: pip JELogSystem
+      - run:
           command: python Test/SQL_Test.py
           name: Test
 
