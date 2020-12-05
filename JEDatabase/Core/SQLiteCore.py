@@ -1,7 +1,5 @@
 import datetime
 
-from JELogSystem.Log_System import Log_System
-
 from JEDatabase.Models.SqliteControl import SqliteControl
 
 
