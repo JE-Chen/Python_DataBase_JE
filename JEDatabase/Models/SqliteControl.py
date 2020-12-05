@@ -82,7 +82,7 @@ DATE 日期， 形如"2018-11-08"
 
 該方法獲取查詢結果集中的下一行，返回一個單一的序列，當沒有更多可用的數據時，則返回None。
 
-14 cursor.fetchmany（[size = cursor.arraysize]）
+14 cursor.fetchmany（[size = cursor.array_size]）
 
 該方法獲取查詢結果集中的下一行組，返回一個列表。當沒有更多的可用的行時，則返回一個空的列表。該方法嘗試獲取由大小參數指定的可用多行。
 
@@ -94,142 +94,163 @@ DATE 日期， 形如"2018-11-08"
 
 class SqliteControl:
 
-    def __init__(self, db_name='test.sqlite', table_name='Test'):
+    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'Test'):
         self.db_name = db_name
         self.table_name = table_name
         self.value_count = 1
         self.connect = sqlite3.connect(db_name, check_same_thread=False)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
         self.cursor = self.connect.cursor()  # 獲取遊標cursor
 
-    # ----------------------------------------------------------------------------------------------
-    # 創造一表
-    # """CREATE TABLE IF NOT EXISTS student(id INTEGER PRIMARY KEY,name VARCHAR(10));"""
     def create_table(self, sql_command):
-        print('I JE-Database exec', 'Sqlite_Control - Create_Table : ', sql_command, ' in ', datetime.datetime.now(),
+        print('I JE-Database exec', 'SqliteControl - create_table : ', sql_command, ' in ', datetime.datetime.now(),
               ' \n', sep='  ')
         self.cursor.execute(sql_command)
         self.connect.commit()  # 進行資料庫語句的提交操作，不提交則無法生效，每次執行後都要提交
 
-    # ----------------------------------------------------------------------------------------------
-    # 插入語句是insert into 加表名 （欄位名， 欄位名）values （對應的值， 對應的值）因為id是主鍵自增，所以就沒有新增他的值
-    # SQL_Command="""INSERT INTO student(name) VALUES ("小明");"""
     def insert_into(self, sql_command, args):
-        print('I JE-Database exec', 'Sqlite_Control - Insert_Into : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - insert_into : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
-
-    # 如果有會忽略
-    # SQL_Command="""INSERT OR IGNORE INTO student(name) VALUES ("小明");"""
     def insert_into_ignore(self, sql_command, args):
-        print('I JE-Database exec', 'Sqlite_Control - Insert_Into_Ignore : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - insert_into_ignore : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
-
-    # 如果有會取代掉
-    # SQL_Command="""INSERT OR REPLACE INTO student(name) VALUES ("小明");"""
     def insert_into_replace(self, sql_command, args):
-        print('I JE-Database exec', 'Sqlite_Control - Insert_Into_Replace : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - insert_into_replace : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
-    # 查詢語句select 加欄位名 查詢表中欄位的資訊 加* 查詢所有的資訊   from 表名
-    # SQL_Command="""SELECT id,name from student;"""
     def select_from(self, sql_command, args):
         result_list = []
-        print('I JE-Database exec', 'Sqlite_Control - Select_From : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - select_from : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         str_list = self.cursor.fetchall()
-        format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
-        if format_string.endswith(","):
-            format_string = format_string[:-1]
-        result_list += self.cursor.execute('SELECT ' + format_string + ' FROM ' + self.table_name).fetchall()
-        print('Sqlite_Control - Select_From result_list : ', result_list, '\n')
-        return result_list  # 查詢的結果
+        if len(str_list) > 0:
+            format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
+            if format_string.endswith(","):
+                format_string = format_string[:-1]
+            for row in self.cursor.execute('SELECT ' + format_string + ' FROM ' + self.table_name).fetchall():
+                if row is not None:
+                    result_list += row
+            print('SqliteControl - Select_From result_list : ', result_list, '\n')
+            if len(result_list) > 0:
+                return result_list
 
-    # ----------------------------------------------------------------------------------------------
-    # 找出表格不同的值
     def select_distinct(self, sql_command, args):
-        result_list, result_format = [], []
-        print('I JE-Database exec', 'Sqlite_Control - Select_Distinct : ', sql_command, 'args=', args, ' in ',
+        result_list = []
+        print('I JE-Database exec', 'SqliteControl - select_distinct : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         str_list = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
-        format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
-        if format_string.endswith(","):
-            format_string = format_string[:-1]
-        result_list += self.cursor.execute('SELECT Distinct ' + format_string + ' FROM ' + self.table_name).fetchall()
-        print('Sqlite_Control - Select_Distinct result_list : ', result_list, '\n')
-        return result_list
+        if len(str_list) > 0:
+            format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
+            if format_string.endswith(","):
+                format_string = format_string[:-1]
+            for row in self.cursor.execute('SELECT Distinct ' + format_string + ' FROM ' + self.table_name).fetchall():
+                if row is not None:
+                    result_list += row
+            print('Sqlite_Control - select_distinct result_list : ', result_list, '\n')
+            if len(result_list) > 0:
+                return result_list
 
-    # ----------------------------------------------------------------------------------------------
-
-    # select * from  表名 where   加上條件，不加的話就是查詢所有
-    # SQL_Command= """SELECT * FROM student WHERE name="小明";"""
     def select_where(self, field, sql_command, args):
         print("field : " + field)
         result_list = []
-        print('I JE-Database exec', 'Sqlite_Control - Select_Where : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - select_where : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         str_list = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
-        format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
-        if format_string.endswith(","):
-            format_string = format_string[:-1]
-        else:
-            format_string.split(',')
-        print(format_string, 'format_string')
-        result_list += self.cursor.execute(
-            'SELECT ' + format_string + ' FROM ' + self.table_name + ''' WHERE ''' + format_string + '''="''' + str(
-                args[len(args) - self.value_count]) + '''"''').fetchall()
-        print('Sqlite_Control - Select_Where result_list : ', result_list, '\n')
-        return result_list
+        if len(str_list) > 0:
+            format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
+            if format_string.endswith(","):
+                format_string = format_string[:-1]
+            else:
+                format_string.split(',')
+            print(format_string, 'format_string')
+            for row in self.cursor.execute(
+                    'SELECT ' + format_string + ' FROM ' + self.table_name + ''' WHERE ''' + format_string + '''="''' + str(
+                        args[len(args) - self.value_count]) + '''"''').fetchall():
+                if row is not None:
+                    result_list += row
+            print('Sqlite_Control - select_where result_list : ', result_list, '\n')
+            if len(result_list) > 0:
+                return result_list
 
-    # ----------------------------------------------------------------------------------------------
-    # 更新資料庫語句 update 加表名 set 欄位名=要更新的值  where 限定條件 ，如果不加where 和後面的條件，將會全部生效
-    # SQL_Command="""UPDATE student SET name="大紅" WHERE id=1;"""
+    def select_where_like(self, field, sql_command, args):
+        print("field : " + field)
+        result_list = []
+        print('I JE-Database exec', 'SqliteControl - select_where_like : ', sql_command, 'args=', args, ' in ',
+              datetime.datetime.now(), ' \n', sep='  ')
+        self.cursor.execute(sql_command, args)
+        str_list = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
+        if len(str_list) > 0:
+            format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
+            if format_string.endswith(","):
+                format_string = format_string[:-1]
+            else:
+                format_string.split(',')
+            print(format_string, 'format_string')
+            for row in self.cursor.execute(
+                    'SELECT ' + format_string + ' FROM ' + self.table_name + ''' WHERE ''' + format_string + ''' LIKE "''' + str(
+                        args[len(args) - self.value_count]) + '''"''').fetchall():
+                if row is not None:
+                    result_list += row
+            print('Sqlite_Control - select_where_like result_list : ', result_list, '\n')
+            if len(result_list) > 0:
+                return result_list
+
+    # need to fix
+    def select_where_any(self, sql_command, args):
+        result_list = []
+        print('I JE-Database exec', 'SqliteControl - select_where_any : ', sql_command, 'args=', args, ' in ',
+              datetime.datetime.now(), ' \n', sep='  ')
+        self.cursor.execute(sql_command, args)
+        str_list = self.cursor.fetchall()  # 用一個變數來接受fetchall（）查詢所有這個函式返回的值。
+        if len(str_list) > 0:
+            format_string = str(str_list[0]).replace(r"(", "").replace(r")", "").replace(r"'", "")
+            if format_string.endswith(","):
+                format_string = format_string[:-1]
+            else:
+                format_string.split(',')
+            print(format_string, 'format_string')
+            for row in self.cursor.execute(
+                    'SELECT ' + format_string + ' FROM ' + self.table_name + ''' WHERE''' + format_string + str(
+                        args[len(args) - self.value_count])).fetchall():
+                if row is not None:
+                    result_list += row
+            print('Sqlite_Control - select_where_any result_list : ', result_list, '\n')
+            if len(result_list) > 0:
+                return result_list
+
     def update(self, sql_command, args):
-        print('I JE-Database exec', 'Sqlite_Control - UPDATE : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - update : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
-    # 刪除語句   delete from 表名 where 範圍，不加where將會刪除整個表但是表的結構還存在就是相當於回到了剛剛建立表的時候
-    # SQL_Command= """DELETE FROM student WHERE id = 1;"""
     def delete(self, sql_command, args):
-        print('I JE-Database exec', 'Sqlite_Control - DELETE : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - delete : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command, args)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
-    # 丟棄表
-    # SQL_Command="""DROP TABLE student;"""
     def drop(self, sql_command, args):
-        print('I JE-Database exec', 'Sqlite_Control - Drop : ', sql_command, 'args=', args, ' in ',
+        print('I JE-Database exec', 'SqliteControl - drop : ', sql_command, 'args=', args, ' in ',
               datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.execute(sql_command)
         self.connect.commit()
 
-    # ----------------------------------------------------------------------------------------------
-    # 回滾
-    # 回復到上一次commit 以來的 改變
     def rollback(self):
-        print('I JE-Database exec', 'Sqlite_Control - Rollback : ', ' in ', datetime.datetime.now(), ' \n', sep='  ')
+        print('I JE-Database exec', 'SqliteControl - rollback : ', ' in ', datetime.datetime.now(), ' \n', sep='  ')
         self.connect.rollback()
 
-    # ----------------------------------------------------------------------------------------------
-    # 關閉
     def close(self):
-        print('I JE-Database exec', 'Sqlite_Control - Close : ', ' in ', datetime.datetime.now(), ' \n', sep='  ')
+        print('I JE-Database exec', 'SqliteControl - close : ', ' in ', datetime.datetime.now(), ' \n', sep='  ')
         self.cursor.close()  # 關閉遊標
         self.connect.close()  # 關閉資料庫連線，在進行完操作之後需要將遊標和連線關閉

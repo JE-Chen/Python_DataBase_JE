@@ -17,6 +17,9 @@ jobs:
       - run:
           command: python Test/SQL_Test.py
           name: Test
+      - run:
+          command: python Test/Test.py
+          name: Test
 
 workflows:
   main:
