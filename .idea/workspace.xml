@@ -20,27 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JEDatabase/JEDatabase.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JEDatabase/JEDatabase.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JEDatabase/JEDatabase.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JEDatabase/JEDatabase.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JEDatabase/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JEDatabase/dist/JEDatabase-0.0.0.0.4.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/134bc839-a4bc-4e47-9217-065b1fc93702.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/38b76d73-3db8-45c7-91d5-83b7dc0a62a4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f578a60-a5ea-4ea9-a548-27b543951eaf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/76c86b54-cb77-42a0-9df8-1a75bb5b300e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/JEDatabase-0.0.0.0.5.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/SQL_Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/SQL_Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test_Source/Account.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Test_Source/Account.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JEDatabase/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JEDatabase/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +69,11 @@
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\JEDatabase" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE" />
       <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\JEDatabase" />
       <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test" />
     </key>
@@ -178,7 +169,7 @@
       <updated>1606983586203</updated>
       <workItem from="1606983587338" duration="12715000" />
       <workItem from="1607067898730" duration="2648000" />
-      <workItem from="1607070722307" duration="8099000" />
+      <workItem from="1607070722307" duration="9445000" />
     </task>
     <servers />
   </component>
