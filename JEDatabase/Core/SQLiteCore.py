@@ -14,8 +14,6 @@ class SQLiteCore:
         """
         try:
             self.SqliteControl = SqliteControl(db_name, table_name)
-            self.log = Log_System()
-            self.log.Set_BoardCast_Lv(2)
         except Exception as Errors:
             print(datetime.datetime.now(), 'I JE-Database Error', sep=' ')
             raise Errors
