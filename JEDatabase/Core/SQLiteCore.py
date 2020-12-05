@@ -31,7 +31,6 @@ class SQLiteCore:
         self.SqliteControl.Value_Count = value_count
 
     def create_table(self, sql_command):
-        self.log.Debug()
         self.SqliteControl.create_table(sql_command)
 
     def insert_into(self, *args, field=None):
