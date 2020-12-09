@@ -1,1 +1,1 @@
-from JELogSystem.Log_System import Log_System
+from JELogSystem.LogSystem import LogSystem
