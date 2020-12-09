@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Account [2]" uuid="98db0868-4305-4308-8a7a-0af5fa85f4a2">
+    <data-source source="LOCAL" name="Account" uuid="9363ef86-52c6-4721-9741-37f8309e48e5">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test_Source\Account.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test\Account.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="TestAccount" uuid="613ec564-990b-4c5d-9b0f-5e23d8599628">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test\TestAccount.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/sqlite-jdbc-3.31.1.jar</url>
