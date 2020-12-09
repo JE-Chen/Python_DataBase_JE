@@ -1,7 +1,5 @@
 import datetime
 
-from typing import List
-
 from JEDatabase.Models.SqliteControl import SqliteControl
 
 
