@@ -7,7 +7,8 @@ class TestDatabase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.SQL = SQLiteCore(r'TestAccount.sqlite', table_name='Account')
-        self.SQL.create_table('CREATE TABLE IF NOT EXISTS Account(id PRIMARY KEY ,email VARCHAR(50),password VARCHAR(15))')
+        self.SQL.create_table(
+            'CREATE TABLE IF NOT EXISTS Account(id PRIMARY KEY ,email VARCHAR(50),password VARCHAR(15))')
 
     def tearDown(self) -> None:
         self.SQL.close()
@@ -29,3 +30,8 @@ class TestDatabase(unittest.TestCase):
 
     def testSelectAccount(self):
         self.SQL.select_account('new_test@gmail.com', 'test_password')
+
+
+if __name__ == '__main__':
+    suite = (unittest.TestLoader().loadTestsFromTestCase(TestDatabase))
+    unittest.TextTestRunner(verbosity=2).run(suite)

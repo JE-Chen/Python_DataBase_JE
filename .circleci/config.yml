@@ -15,11 +15,11 @@ jobs:
           command: pip install --user JELogSystem
           name: pip JELogSystem
       - run:
-          command: python Test/UnitTest.py
-          name: Test
-      - run:
           command: python Test/Test.py
           name: Test
+      - run:
+          command: python Test/UnitTest.py
+          name: UnitTest
 
 workflows:
   main:
