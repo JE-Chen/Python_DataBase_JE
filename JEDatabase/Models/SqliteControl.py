@@ -170,12 +170,12 @@ class SqliteControl:
         return self.__process_select_list(sql_command, args, 'select_account')
 
     def inner_join(self, sql_command):
-        self.__sql_log('inner_joint', sql_command, args='None')
+        self.__sql_log('inner_join', sql_command, args='')
         self.cursor.execute(sql_command)
         return self.__process_select_list_noargs(sql_command, 'inner_join')
 
     def inner_join_where(self, sql_command):
-        self.__sql_log('inner_joint', sql_command, args='None')
+        self.__sql_log('inner_join', sql_command, args='')
         self.cursor.execute(sql_command)
         return self.__process_select_list_noargs(sql_command, 'inner_join')
 
