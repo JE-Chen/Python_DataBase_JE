@@ -20,4 +20,18 @@ SQL.select_prefix = 'LessonDetail.LessonCode'
 
 SQL.inner_join('LessonDetail', 'LessonContent.LessonCode', 'LessonDetail.LessonCode')
 
+SQL.table_name = 'LessonGrade'
+
+SQL.insert_into_replace('A877', '410877027', '999', '109', 'HCP')
+
+SQL.table_name = 'Account'
+
+SQL.select_prefix = '*'
+
+SQL.inner_join('LessonGrade', 'Account.PersonnelNumber', 'LessonGrade.PersonnelNumber')
+
+SQL.select_prefix = 'LessonCode'
+
+SQL.inner_join('LessonDetail', 'LessonCode', 'LessonDetail.LessonCode')
+
 SQL.close()

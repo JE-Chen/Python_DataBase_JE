@@ -20,6 +20,9 @@ jobs:
       - run:
           command: python Test/UnitTest.py
           name: UnitTest
+      - run:
+          command: python Test/TestControl.py
+          name: UnitTest
 
 workflows:
   main:
