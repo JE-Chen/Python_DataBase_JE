@@ -5,7 +5,7 @@ from JEDatabase.Models.SqliteControl import SqliteControl
 
 class SQLiteCore:
 
-    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'Test', name: str = '*'):
+    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'Test', select_prefix: str = '*'):
         """
         :type db_name: str
         :type table_name: str
@@ -13,7 +13,7 @@ class SQLiteCore:
         try:
             self.SqliteControl = SqliteControl(db_name, table_name)
             self.table_name = table_name
-            self.name = name
+            self.select_prefix = select_prefix
             self.value_count = 2
             self.SQLite_Cursor = self.SqliteControl.cursor
             self.SQLite_Connect = self.SqliteControl.connect
@@ -26,7 +26,7 @@ class SQLiteCore:
         self.table_name = table_name
 
     def set_name(self, name) -> None:
-        self.name = name
+        self.select_prefix = name
 
     def set_value_count(self, value_count) -> None:
         self.value_count = value_count
@@ -95,16 +95,28 @@ class SQLiteCore:
         self.SqliteControl.delete(sql_command, args)
 
     def select_form(self, *args) -> list:
-        sql_command = '''SELECT ''' + self.name + ''' FROM ''' + self.table_name
+        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name
         return self.SqliteControl.select_from(sql_command, args)
 
     def select_distinct(self, *args):
-        sql_command = '''SELECT DISTINCT ''' + self.name + ''' FROM ''' + self.table_name
+        sql_command = '''SELECT DISTINCT ''' + self.select_prefix + ''' FROM ''' + self.table_name
         return self.SqliteControl.select_distinct(sql_command, args)
 
     def select_account(self, *args):
-        sql_command = '''SELECT ''' + self.name + ''' FROM ''' + self.table_name + ''' WHERE email = ? AND password = ? LIMIT 1'''
+        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + ''' WHERE email = ? AND password = ? LIMIT 1'''
         return self.SqliteControl.select_account(sql_command, args)
+
+    def inner_join(self, inner_join_name, inner_join_field1, inner_join_field2):
+        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + ''' INNER JOIN ''' + \
+                      inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2
+        return self.SqliteControl.inner_join(sql_command)
+
+    def inner_join_where(self, inner_join_name, inner_join_field1, inner_join_field2, where1, where2):
+        sql_command = \
+            '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + ''' INNER JOIN ''' + \
+            inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
+            ''' WHERE ''' + where1 + ''' = ''' + where2
+        return self.SqliteControl.inner_join(sql_command)
 
     def rollback(self):
         self.SqliteControl.rollback()
@@ -115,3 +127,6 @@ class SQLiteCore:
 
     def close(self):
         self.SqliteControl.close()
+
+    def test_sql(self, sql_command):
+        self.SqliteControl.test_sql(sql_command)

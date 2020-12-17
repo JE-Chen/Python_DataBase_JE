@@ -110,6 +110,15 @@ class SqliteControl:
         print('SqliteControl : ' + what_select, result_list, '\n')
         return result_list
 
+    def __process_select_list_noargs(self, sql_command, what_select):
+        result_list = []
+        for row in self.cursor.execute(sql_command).fetchall():
+            result_list.append(row)
+        import itertools
+        result_list = list(itertools.chain(*result_list))
+        print('SqliteControl : ' + what_select, result_list, '\n')
+        return result_list
+
     @staticmethod
     def __sql_log(sql_command_type, sql_command, args):
         print(sql_command, args)
@@ -160,6 +169,16 @@ class SqliteControl:
         self.cursor.execute(sql_command, args)
         return self.__process_select_list(sql_command, args, 'select_account')
 
+    def inner_join(self, sql_command):
+        self.__sql_log('inner_joint', sql_command, args='None')
+        self.cursor.execute(sql_command)
+        return self.__process_select_list_noargs(sql_command, 'inner_join')
+
+    def inner_join_where(self, sql_command):
+        self.__sql_log('inner_joint', sql_command, args='None')
+        self.cursor.execute(sql_command)
+        return self.__process_select_list_noargs(sql_command, 'inner_join')
+
     def update(self, sql_command, args):
         self.__sql_log('update', sql_command, args)
         self.cursor.execute(sql_command, args)
@@ -183,3 +202,8 @@ class SqliteControl:
         self.__sql_log('close', 'Close', '')
         self.cursor.close()
         self.connect.close()
+
+    def test_sql(self, sql_command):
+        self.__sql_log('test_sql', sql_command, '')
+        self.cursor.execute(sql_command)
+        self.connect.commit()
