@@ -52,4 +52,12 @@ SQL.table_name = 'PersonnelDetail'
 
 SQL.insert_into_replace('410877027', 'JE-Chen', '107')
 
+SQL.table_name = 'Account'
+
+SQL.select_prefix = 'LessonDetail.LessonCode'
+
+SQL.inner_inner_join(
+    'LessonDetail', 'Account.PersonnelNumber', 'LessonDetail.PersonnelNumber'
+    , 'LessonContent', 'LessonDetail.LessonCode', 'LessonContent.LessonCode')
+
 SQL.close()

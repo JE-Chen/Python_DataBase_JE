@@ -22,7 +22,7 @@ jobs:
           name: UnitTest
       - run:
           command: python Test/TestControl.py
-          name: UnitTest
+          name: TestControl
 
 workflows:
   main:
