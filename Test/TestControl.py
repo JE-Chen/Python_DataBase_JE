@@ -24,6 +24,14 @@ SQL.table_name = 'LessonGrade'
 
 SQL.insert_into_replace('A877', '410877027', '999', '109', 'HCP')
 
+SQL.table_name = 'PersonnelAccess'
+
+SQL.insert_into_replace('410877027', 'Super')
+
+SQL.table_name = 'PersonnelDetail'
+
+SQL.insert_into_replace('410877027', 'JE-Chen', '107')
+
 SQL.table_name = 'Account'
 
 SQL.select_prefix = '*'
@@ -43,14 +51,6 @@ SQL.table_name = 'PersonnelAccess'
 SQL.select_prefix = 'PersonnelAccess.Access'
 
 SQL.inner_join('PersonnelDetail', 'PersonnelDetail.PersonnelNumber', 'PersonnelAccess.PersonnelNumber')
-
-SQL.table_name = 'PersonnelAccess'
-
-SQL.insert_into_replace('410877027', 'Super')
-
-SQL.table_name = 'PersonnelDetail'
-
-SQL.insert_into_replace('410877027', 'JE-Chen', '107')
 
 SQL.table_name = 'Account'
 
