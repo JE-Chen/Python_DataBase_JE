@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fe3d8e15-1572-41ec-aa03-1d6ac91ee74c.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JEDatabase.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/JEDatabase-0.0.0.0.12.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/StudentSystemData.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Test/StudentSystemData.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/TestControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/TestControl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +211,7 @@
       <workItem from="1608040052565" duration="1358000" />
       <workItem from="1608051984396" duration="25313000" />
       <workItem from="1608278964286" duration="594000" />
-      <workItem from="1608286937043" duration="656000" />
+      <workItem from="1608286937043" duration="2548000" />
     </task>
     <servers />
   </component>

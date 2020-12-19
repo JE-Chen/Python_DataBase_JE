@@ -103,12 +103,13 @@ class SQLiteCore:
         return self.SqliteControl.select_distinct(sql_command, args)
 
     def select_account(self, *args):
-        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + ''' WHERE email = ? AND password = ? LIMIT 1'''
+        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
+                      ''' WHERE email = ? AND password = ? LIMIT 1'''
         return self.SqliteControl.select_account(sql_command, args)
 
     def inner_join(self, inner_join_name, inner_join_field1, inner_join_field2):
-        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + ''' INNER JOIN ''' + \
-                      inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2
+        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
+                      ''' INNER JOIN ''' + inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2
         return self.SqliteControl.inner_join(sql_command)
 
     def inner_inner_join(self, inner_join_name1, inner_join_field1, inner_join_field2
@@ -122,8 +123,8 @@ class SQLiteCore:
 
     def inner_join_where(self, inner_join_name, inner_join_field1, inner_join_field2, where1, where2):
         sql_command = \
-            '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + ''' INNER JOIN ''' + \
-            inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
+            '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
+            ''' INNER JOIN ''' + inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
             ''' WHERE ''' + where1 + ''' = ''' + where2
         return self.SqliteControl.inner_join(sql_command)
 
