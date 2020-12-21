@@ -87,7 +87,8 @@ class SQLiteCore:
         self.SqliteControl.insert_into_replace(sql_command, args)
 
     def update(self, *args, field, where_what=None) -> None:
-        sql_command = '''UPDATE ''' + self.table_name + ''' SET ''' + field + '''=? WHERE ''' + where_what + '''=?'''
+        sql_command = '''UPDATE ''' + self.table_name + ''' SET ''' + field + '''=? ''' + \
+                      '''WHERE ''' + where_what + '''=?'''
         self.SqliteControl.update(sql_command, args)
 
     def delete(self, field, *args) -> None:
@@ -126,7 +127,17 @@ class SQLiteCore:
             '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
             ''' INNER JOIN ''' + inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
             ''' WHERE ''' + where1 + ''' = ''' + where2
-        return self.SqliteControl.inner_join(sql_command)
+        return self.SqliteControl.inner_join_where(sql_command)
+
+    def inner_inner_join_where(self, inner_join_name1, inner_join_field1, inner_join_field2
+                               , inner_join_name2, inner_join_field3, inner_join_field4, where1, where2):
+        sql_command = \
+            '''SELECT ''' + self.select_prefix + \
+            ''' FROM ''' + self.table_name + \
+            ''' INNER JOIN ''' + inner_join_name1 + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
+            ''' INNER JOIN ''' + inner_join_name2 + ''' on ''' + inner_join_field3 + ''' = ''' + inner_join_field4 + \
+            ''' WHERE ''' + where1 + ''' = ''' + "'" + where2 + "'"
+        return self.SqliteControl.inner_inner_join_where(sql_command)
 
     def rollback(self):
         self.SqliteControl.rollback()

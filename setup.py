@@ -5,7 +5,7 @@ with open("README.md", "r") as README:
 
 setuptools.setup(
     name="JEDatabase",
-    version="0.0.0.0.12",
+    version="0.0.0.0.13",
     author="JE-Chen",
     author_email="zenmailman@gmail.com",
     description="JE use Sqlite",

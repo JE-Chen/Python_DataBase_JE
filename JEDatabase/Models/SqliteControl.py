@@ -174,15 +174,20 @@ class SqliteControl:
         self.cursor.execute(sql_command)
         return self.__process_select_list_noargs(sql_command, 'inner_join')
 
-    def inner_join_where(self, sql_command):
-        self.__sql_log('inner_join_where', sql_command, args='')
-        self.cursor.execute(sql_command)
-        return self.__process_select_list_noargs(sql_command, 'inner_join')
-
     def inner_inner_join(self, sql_command):
         self.__sql_log('inner_inner_join', sql_command, args='')
         self.cursor.execute(sql_command)
         return self.__process_select_list_noargs(sql_command, 'inner_inner_join')
+
+    def inner_join_where(self, sql_command):
+        self.__sql_log('inner_join_where', sql_command, args='')
+        self.cursor.execute(sql_command)
+        return self.__process_select_list_noargs(sql_command, 'inner_join_where')
+
+    def inner_inner_join_where(self, sql_command):
+        self.__sql_log('inner_inner_join_where', sql_command, args='')
+        self.cursor.execute(sql_command)
+        return self.__process_select_list_noargs(sql_command, 'inner_inner_join_where')
 
     def update(self, sql_command, args):
         self.__sql_log('update', sql_command, args)
