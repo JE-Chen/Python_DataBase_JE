@@ -25,6 +25,7 @@ jobs:
           name: TestControl
 
 workflows:
+  version: 2
   main:
     jobs:
       - build-and-test
