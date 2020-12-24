@@ -39,16 +39,20 @@ class SQLiteCore:
 
         if field is None:
             if len(args) == 1:
-                sql_command = '''INSERT INTO ''' + self.table_name + ''' VALUES (?)'''
+                sql_command = '''INSERT INTO ''' + self.table_name + \
+                              ''' VALUES (?)'''
             else:
-                sql_command = '''INSERT INTO ''' + self.table_name + ''' VALUES (''' + '?,' * (
-                        len(args) - 1) + '?' + ''')'''
+                sql_command = '''INSERT INTO ''' + self.table_name + \
+                              ''' VALUES (''' + '?,' * (
+                                      len(args) - 1) + '?' + ''')'''
         else:
             if len(args) == 1:
-                sql_command = '''INSERT INTO ''' + self.table_name + '''(''' + field + ''') VALUES (?)'''
+                sql_command = '''INSERT INTO ''' + self.table_name + \
+                              '''(''' + field + ''') VALUES (?)'''
             else:
-                sql_command = '''INSERT INTO ''' + self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * (
-                        len(args) - 1) + '?' + ''')'''
+                sql_command = '''INSERT INTO ''' + self.table_name + \
+                              '''(''' + field + ''') VALUES (''' + '?,' * (
+                                      len(args) - 1) + '?' + ''')'''
 
         self.SqliteControl.insert_into(sql_command, args)
 
@@ -56,13 +60,16 @@ class SQLiteCore:
 
         if field is None:
             if len(args) == 1:
-                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + ''' VALUES (?)'''
+                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
+                              ''' VALUES (?)'''
             else:
-                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + ''' VALUES (''' + '?,' * (
-                        len(args) - 1) + '?' + ''')'''
+                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
+                              ''' VALUES (''' + '?,' * (
+                                      len(args) - 1) + '?' + ''')'''
         else:
             if len(args) == 1:
-                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + '''(''' + field + ''') VALUES (?)'''
+                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
+                              '''(''' + field + ''') VALUES (?)'''
             else:
                 sql_command = '''INSERT OR IGNORE INTO ''' + \
                               self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * \
@@ -73,16 +80,20 @@ class SQLiteCore:
     def insert_into_replace(self, *args, field=None) -> None:
         if field is None:
             if len(args) == 1:
-                sql_command = '''REPLACE INTO ''' + self.table_name + ''' VALUES (?)'''
+                sql_command = '''REPLACE INTO ''' + self.table_name + \
+                              ''' VALUES (?)'''
             else:
-                sql_command = '''REPLACE INTO ''' + self.table_name + ''' VALUES (''' + '?,' * (
-                        len(args) - 1) + '?' + ''')'''
+                sql_command = '''REPLACE INTO ''' + self.table_name + \
+                              ''' VALUES (''' + '?,' * (
+                                      len(args) - 1) + '?' + ''')'''
         else:
             if len(args) == 1:
-                sql_command = '''REPLACE INTO ''' + self.table_name + '''(''' + field + ''')VALUES (?)'''
+                sql_command = '''REPLACE INTO ''' + self.table_name + \
+                              '''(''' + field + ''')VALUES (?)'''
             else:
-                sql_command = '''REPLACE INTO ''' + self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * (
-                        len(args) - 1) + '?' + ''')'''
+                sql_command = '''REPLACE INTO ''' + self.table_name + \
+                              '''(''' + field + ''') VALUES (''' + '?,' * (
+                                      len(args) - 1) + '?' + ''')'''
 
         self.SqliteControl.insert_into_replace(sql_command, args)
 
@@ -128,12 +139,14 @@ class SQLiteCore:
         return self.SqliteControl.select_account(sql_command, args)
 
     def inner_join(self, inner_join_name, inner_join_field1, inner_join_field2):
-        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
-                      ''' INNER JOIN ''' + inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2
+        sql_command = '''SELECT ''' + self.select_prefix + \
+                      ''' FROM ''' + self.table_name + \
+                      ''' INNER JOIN ''' + inner_join_name + \
+                      ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2
         return self.SqliteControl.inner_join(sql_command)
 
-    def inner_inner_join(self, inner_join_name1, inner_join_field1, inner_join_field2
-                         , inner_join_name2, inner_join_field3, inner_join_field4):
+    def inner_inner_join(self, inner_join_name1, inner_join_field1, inner_join_field2,
+                         inner_join_name2, inner_join_field3, inner_join_field4):
         sql_command = \
             '''SELECT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
@@ -145,14 +158,15 @@ class SQLiteCore:
 
     def inner_join_where(self, inner_join_name, inner_join_field1, inner_join_field2, where1, where2):
         sql_command = \
-            '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
+            '''SELECT ''' + self.select_prefix + \
+            ''' FROM ''' + self.table_name + \
             ''' INNER JOIN ''' + inner_join_name + \
             ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
             ''' WHERE ''' + where1 + ''' = ''' + where2
         return self.SqliteControl.inner_join_where(sql_command)
 
-    def inner_inner_join_where(self, inner_join_name1, inner_join_field1, inner_join_field2
-                               , inner_join_name2, inner_join_field3, inner_join_field4, where1, where2):
+    def inner_inner_join_where(self, inner_join_name1, inner_join_field1, inner_join_field2,
+                               inner_join_name2, inner_join_field3, inner_join_field4, where1, where2):
         sql_command = \
             '''SELECT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
