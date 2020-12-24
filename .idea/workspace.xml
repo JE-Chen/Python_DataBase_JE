@@ -19,18 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7f2b0c39-2de3-494a-8a22-7abd55f37d25.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/CreateTestDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CreateTestDatabase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/StudentSystemData.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Test/StudentSystemData.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/TestControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/TestControl.py" afterDir="false" />
-    </list>
+    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -239,7 +228,7 @@
       <workItem from="1608439117839" duration="10306000" />
       <workItem from="1608517799890" duration="1212000" />
       <workItem from="1608579478672" duration="9466000" />
-      <workItem from="1608752530758" duration="1639000" />
+      <workItem from="1608752530758" duration="1768000" />
     </task>
     <servers />
   </component>
