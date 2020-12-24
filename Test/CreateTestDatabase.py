@@ -16,16 +16,20 @@ SQL.create_table(
 SQL.create_table(
     'CREATE TABLE IF NOT EXISTS LessonDetail('
     'LessonCode VARCHAR (10) PRIMARY KEY ,'
-    'PersonnelNumber VARCHAR(20),'
     'LessonName VARCHAR (20),'
     'LessonCredit VARCHAR (5),'
     'LessonProfessor VARCHAR (20),'
-    'LessonType VARCHAR (3),'
-    'Semester VARCHAR (5))')
+    'LessonType VARCHAR (3))')
+
+SQL.create_table(
+    'CREATE TABLE IF NOT EXISTS SemesterLesson('
+    'LessonCode VARCHAR (10) PRIMARY KEY,'
+    'PersonnelNumber VARCHAR(20),'
+    'Semester VARCHAR(5))')
 
 SQL.create_table(
     'CREATE TABLE IF NOT EXISTS LessonContent('
-    'LessonCode VARCHAR(20) PRIMARY KEY ,'
+    'LessonCode VARCHAR(10) PRIMARY KEY ,'
     'LessonName VARCHAR(20),'
     'LessonContent VARCHAR(3000),'
     'Semester VARCHAR (5))')
@@ -34,7 +38,7 @@ SQL.create_table(
     'CREATE TABLE IF NOT EXISTS LessonGrade('
     'LessonCode VARCHAR(20) PRIMARY KEY ,'
     'PersonnelNumber VARCHAR(20),'
-    'Grade VARCHAR(3000),'
+    'Grade VARCHAR(5),'
     'Semester VARCHAR(5),'
     'LessonProfessor VARCHAR(20))')
 

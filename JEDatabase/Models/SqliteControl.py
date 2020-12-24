@@ -105,8 +105,8 @@ class SqliteControl:
         result_list = []
         for row in self.cursor.execute(sql_command, args).fetchall():
             result_list.append(row)
-        # import itertools
-        # result_list = list(itertools.chain(*result_list))
+        import itertools
+        result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
         return result_list
 
@@ -152,11 +152,15 @@ class SqliteControl:
         self.__sql_log('select_distinct', sql_command, args)
         return self.__process_select_list(sql_command, args, 'select_distinct')
 
-    def select_where(self, field, sql_command, args):
-        print("field : " + field)
+    def select_where(self, sql_command, args):
         self.__sql_log('select_where', sql_command, args)
         self.cursor.execute(sql_command, args)
         return self.__process_select_list(sql_command, args, 'select_where')
+
+    def select_where_and(self, sql_command, args):
+        self.__sql_log('select_where_and', sql_command, args)
+        self.cursor.execute(sql_command, args)
+        return self.__process_select_list(sql_command, args, 'select_where_and')
 
     def select_where_like(self, field, sql_command, args):
         print("field : " + field)

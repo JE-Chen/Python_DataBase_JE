@@ -86,26 +86,45 @@ class SQLiteCore:
 
         self.SqliteControl.insert_into_replace(sql_command, args)
 
-    def update(self, *args, field, where_what=None) -> None:
-        sql_command = '''UPDATE ''' + self.table_name + ''' SET ''' + field + '''=? ''' + \
+    def update(self, field, where_what, *args) -> None:
+        sql_command = '''UPDATE ''' + self.table_name + \
+                      ''' SET ''' + field + '''=? ''' + \
                       '''WHERE ''' + where_what + '''=?'''
         self.SqliteControl.update(sql_command, args)
 
-    def delete(self, field, *args) -> None:
-        sql_command = '''DELETE FROM ''' + self.table_name + ''' WHERE ''' + field + ''' =? '''
+    def delete(self, where1, *args) -> None:
+        sql_command = '''DELETE FROM ''' + self.table_name + \
+                      ''' WHERE ''' + where1 + ''' =? '''
         self.SqliteControl.delete(sql_command, args)
 
     def select_form(self, *args) -> list:
-        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name
+        sql_command = '''SELECT ''' + self.select_prefix + \
+                      ''' FROM ''' + self.table_name
         return self.SqliteControl.select_from(sql_command, args)
 
+    def select_where(self, where1, *args) -> list:
+        sql_command = '''SELECT ''' + self.select_prefix + \
+                      ''' FROM ''' + self.table_name + \
+                      ''' WHERE ''' + where1 + '''=?'''
+        return self.SqliteControl.select_where(sql_command, args)
+
+    def select_where_and(self, where1, where2, *args) -> list:
+        sql_command = '''SELECT ''' + self.select_prefix + \
+                      ''' FROM ''' + self.table_name + \
+                      ''' WHERE ''' + where1 + '''=?''' + \
+                      ''' AND ''' + \
+                      where2 + '''=?'''
+        return self.SqliteControl.select_where(sql_command, args)
+
     def select_distinct(self, *args):
-        sql_command = '''SELECT DISTINCT ''' + self.select_prefix + ''' FROM ''' + self.table_name
+        sql_command = '''SELECT DISTINCT ''' + self.select_prefix + \
+                      ''' FROM ''' + self.table_name
         return self.SqliteControl.select_distinct(sql_command, args)
 
     def select_account(self, *args):
-        sql_command = '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
-                      ''' WHERE email = ? AND password = ? LIMIT 1'''
+        sql_command = '''SELECT ''' + self.select_prefix + \
+                      ''' FROM ''' + self.table_name + \
+                      ''' WHERE PersonnelNumber = ? AND password = ? LIMIT 1'''
         return self.SqliteControl.select_account(sql_command, args)
 
     def inner_join(self, inner_join_name, inner_join_field1, inner_join_field2):
@@ -118,14 +137,17 @@ class SQLiteCore:
         sql_command = \
             '''SELECT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
-            ''' INNER JOIN ''' + inner_join_name1 + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
-            ''' INNER JOIN ''' + inner_join_name2 + ''' on ''' + inner_join_field3 + ''' = ''' + inner_join_field4
+            ''' INNER JOIN ''' + inner_join_name1 + \
+            ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
+            ''' INNER JOIN ''' + inner_join_name2 + \
+            ''' on ''' + inner_join_field3 + ''' = ''' + inner_join_field4
         return self.SqliteControl.inner_inner_join(sql_command)
 
     def inner_join_where(self, inner_join_name, inner_join_field1, inner_join_field2, where1, where2):
         sql_command = \
             '''SELECT ''' + self.select_prefix + ''' FROM ''' + self.table_name + \
-            ''' INNER JOIN ''' + inner_join_name + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
+            ''' INNER JOIN ''' + inner_join_name + \
+            ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
             ''' WHERE ''' + where1 + ''' = ''' + where2
         return self.SqliteControl.inner_join_where(sql_command)
 
@@ -134,8 +156,10 @@ class SQLiteCore:
         sql_command = \
             '''SELECT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
-            ''' INNER JOIN ''' + inner_join_name1 + ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
-            ''' INNER JOIN ''' + inner_join_name2 + ''' on ''' + inner_join_field3 + ''' = ''' + inner_join_field4 + \
+            ''' INNER JOIN ''' + inner_join_name1 + \
+            ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
+            ''' INNER JOIN ''' + inner_join_name2 + \
+            ''' on ''' + inner_join_field3 + ''' = ''' + inner_join_field4 + \
             ''' WHERE ''' + where1 + ''' = ''' + "'" + where2 + "'"
         return self.SqliteControl.inner_inner_join_where(sql_command)
 
