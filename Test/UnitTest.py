@@ -26,10 +26,12 @@ class TestDatabase(unittest.TestCase):
         self.SQL.select_distinct()
 
     def testUpdate(self):
-        self.SQL.update('new_test@gmail.com', 'test2@gmail.com', field='email', where_what='email')
+        self.SQL.update('email', 'email', 'new_test@gmail.com', 'test_password')
 
     def testSelectAccount(self):
-        self.SQL.select_account('new_test@gmail.com', 'test_password')
+        self.SQL.select_prefix = '*'
+        self.SQL.table_name = 'Account'
+        self.SQL.select_account('email', 'password', 'new_test@gmail.com', 'test_password')
 
 
 if __name__ == '__main__':

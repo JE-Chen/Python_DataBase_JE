@@ -105,8 +105,8 @@ class SqliteControl:
         result_list = []
         for row in self.cursor.execute(sql_command, args).fetchall():
             result_list.append(row)
-        import itertools
-        result_list = list(itertools.chain(*result_list))
+        # import itertools
+        # result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
         return result_list
 

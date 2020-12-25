@@ -38,7 +38,7 @@ SQL.select_form()
 
 SQL.select_where('Password', 'test_password')
 
-SQL.select_account('410877027', 'test_password')
+SQL.select_account('PersonnelNumber', 'Password', '410877027', 'test_password')
 
 SQL.update('password', 'password', 'test_password', 'new_password')
 

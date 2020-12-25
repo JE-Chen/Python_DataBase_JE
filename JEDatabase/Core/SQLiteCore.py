@@ -132,10 +132,11 @@ class SQLiteCore:
                       ''' FROM ''' + self.table_name
         return self.SqliteControl.select_distinct(sql_command, args)
 
-    def select_account(self, *args):
+    def select_account(self, where1, where2, *args):
         sql_command = '''SELECT ''' + self.select_prefix + \
                       ''' FROM ''' + self.table_name + \
-                      ''' WHERE PersonnelNumber = ? AND password = ? LIMIT 1'''
+                      ''' WHERE ''' + where1 + ''' = ? ''' + \
+                      '''AND + ''' + where2 + ''' = ? LIMIT 1'''
         return self.SqliteControl.select_account(sql_command, args)
 
     def inner_join(self, inner_join_name, inner_join_field1, inner_join_field2):
