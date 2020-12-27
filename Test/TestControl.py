@@ -26,9 +26,9 @@ SQL.table_name = 'PersonnelDetail'
 
 SQL.insert_into_replace('410877027', 'JE-Chen', '107')
 
-SQL.table_name = 'PersonnelDetail'
+SQL.table_name = 'SemesterLesson'
 
-SQL.insert_into_replace('A001', 'JE-Chen', '109')
+SQL.insert_into_replace('A001', '410877027', '109')
 
 SQL.select_prefix = "*"
 
@@ -41,6 +41,30 @@ SQL.select_where('Password', 'test_password')
 SQL.select_account('PersonnelNumber', 'Password', '410877027', 'test_password')
 
 SQL.update('password', 'password', 'test_password', 'new_password')
+
+SQL.select_form()
+
+SQL.table_name = 'LessonContent'
+
+SQL.select_form()
+
+SQL.table_name = 'LessonDetail'
+
+SQL.select_form()
+
+SQL.table_name = 'LessonGrade'
+
+SQL.select_form()
+
+SQL.table_name = 'PersonnelAccess'
+
+SQL.select_form()
+
+SQL.table_name = 'PersonnelDetail'
+
+SQL.select_form()
+
+SQL.table_name = 'SemesterLesson'
 
 SQL.select_form()
 
