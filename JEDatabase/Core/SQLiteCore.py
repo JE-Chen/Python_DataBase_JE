@@ -103,6 +103,13 @@ class SQLiteCore:
                       '''WHERE ''' + where_what + '''=?'''
         self.SqliteControl.update(sql_command, args)
 
+    def update_and(self, field, where_what1, where_what2, *args) -> None:
+        sql_command = '''UPDATE ''' + self.table_name + \
+                      ''' SET ''' + field + '''=? ''' + \
+                      '''WHERE ''' + where_what1 + '''=?''' + \
+                      ''' AND ''' + where_what2 + '''=?'''
+        self.SqliteControl.update(sql_command, args)
+
     def delete(self, where1, *args) -> None:
         sql_command = '''DELETE FROM ''' + self.table_name + \
                       ''' WHERE ''' + where1 + ''' =? '''
@@ -123,8 +130,7 @@ class SQLiteCore:
         sql_command = '''SELECT ''' + self.select_prefix + \
                       ''' FROM ''' + self.table_name + \
                       ''' WHERE ''' + where1 + '''=?''' + \
-                      ''' AND ''' + \
-                      where2 + '''=?'''
+                      ''' AND ''' + where2 + '''=?'''
         return self.SqliteControl.select_where(sql_command, args)
 
     def select_distinct(self, *args):
@@ -140,7 +146,7 @@ class SQLiteCore:
         return self.SqliteControl.select_account(sql_command, args)
 
     def inner_join(self, inner_join_name, inner_join_field1, inner_join_field2):
-        sql_command = '''SELECT ''' + self.select_prefix + \
+        sql_command = '''SELECT DISTINCT ''' + self.select_prefix + \
                       ''' FROM ''' + self.table_name + \
                       ''' INNER JOIN ''' + inner_join_name + \
                       ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2
@@ -149,7 +155,7 @@ class SQLiteCore:
     def inner_inner_join(self, inner_join_name1, inner_join_field1, inner_join_field2,
                          inner_join_name2, inner_join_field3, inner_join_field4):
         sql_command = \
-            '''SELECT ''' + self.select_prefix + \
+            '''SELECT DISTINCT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
             ''' INNER JOIN ''' + inner_join_name1 + \
             ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
@@ -159,7 +165,7 @@ class SQLiteCore:
 
     def inner_join_where(self, inner_join_name, inner_join_field1, inner_join_field2, where1, where2):
         sql_command = \
-            '''SELECT ''' + self.select_prefix + \
+            '''SELECT DISTINCT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
             ''' INNER JOIN ''' + inner_join_name + \
             ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
@@ -169,7 +175,7 @@ class SQLiteCore:
     def inner_inner_join_where(self, inner_join_name1, inner_join_field1, inner_join_field2,
                                inner_join_name2, inner_join_field3, inner_join_field4, where1, where2):
         sql_command = \
-            '''SELECT ''' + self.select_prefix + \
+            '''SELECT DISTINCT ''' + self.select_prefix + \
             ''' FROM ''' + self.table_name + \
             ''' INNER JOIN ''' + inner_join_name1 + \
             ''' on ''' + inner_join_field1 + ''' = ''' + inner_join_field2 + \
