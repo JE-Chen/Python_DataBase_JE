@@ -5,7 +5,7 @@ with open("README.md", "r") as README:
 
 setuptools.setup(
     name="JEDatabase",
-    version="0.0.0.0.17",
+    version="0.0.0.0.20",
     author="JE-Chen",
     author_email="zenmailman@gmail.com",
     description="JE use Sqlite",
@@ -22,5 +22,5 @@ setuptools.setup(
     ]
 )
 
-# sdist bdist_wheel
+# python setup.py sdist bdist_wheel
 # python -m twine upload dist/*

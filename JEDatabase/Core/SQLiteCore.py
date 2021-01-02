@@ -103,9 +103,22 @@ class SQLiteCore:
                       '''WHERE ''' + where_what + '''=?'''
         self.SqliteControl.update(sql_command, args)
 
+    def update_two(self, field1, field2, where_what, *args) -> None:
+        sql_command = '''UPDATE ''' + self.table_name + \
+                      ''' SET ''' + field1 + '''=?,''' + field2 + '''=? ''' + \
+                      '''WHERE ''' + where_what + '''=?'''
+        self.SqliteControl.update(sql_command, args)
+
     def update_and(self, field, where_what1, where_what2, *args) -> None:
         sql_command = '''UPDATE ''' + self.table_name + \
                       ''' SET ''' + field + '''=? ''' + \
+                      '''WHERE ''' + where_what1 + '''=?''' + \
+                      ''' AND ''' + where_what2 + '''=?'''
+        self.SqliteControl.update(sql_command, args)
+
+    def update_and_two(self, field1, field2, where_what1, where_what2, *args) -> None:
+        sql_command = '''UPDATE ''' + self.table_name + \
+                      ''' SET ''' + field1 + '''=?,''' + field2 + '''=? ''' + \
                       '''WHERE ''' + where_what1 + '''=?''' + \
                       ''' AND ''' + where_what2 + '''=?'''
         self.SqliteControl.update(sql_command, args)
