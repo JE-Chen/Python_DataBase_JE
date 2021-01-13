@@ -24,12 +24,13 @@ class SqliteControl:
         self.LogSystem.debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
-    def __process_select_list_noargs(self, sql_command, what_select):
+    def __process_select_list_noargs(self, sql_command, what_select, no_arg):
         result_list = []
         for row in self.cursor.execute(sql_command).fetchall():
             result_list.append(row)
-        import itertools
-        result_list = list(itertools.chain(*result_list))
+        if no_arg is None:
+            import itertools
+            result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
         self.LogSystem.debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
@@ -89,25 +90,35 @@ class SqliteControl:
         self.cursor.execute(sql_command, args)
         return self.__process_select_list(sql_command, args, 'select_account')
 
-    def inner_join(self, sql_command):
-        self.__sql_log('inner_join', sql_command, args='')
+    def inner_join_distinct(self, sql_command, no_arg):
+        self.__sql_log('inner_join_distinct', sql_command, args='')
         self.cursor.execute(sql_command)
-        return self.__process_select_list_noargs(sql_command, 'inner_join')
+        return self.__process_select_list_noargs(sql_command, 'inner_join_distinct', no_arg)
 
-    def inner_inner_join(self, sql_command):
-        self.__sql_log('inner_inner_join', sql_command, args='')
+    def inner_inner_join_distinct(self, sql_command, no_arg):
+        self.__sql_log('inner_inner_join_distinct', sql_command, args='')
         self.cursor.execute(sql_command)
-        return self.__process_select_list_noargs(sql_command, 'inner_inner_join')
+        return self.__process_select_list_noargs(sql_command, 'inner_inner_join_distinct', no_arg)
 
-    def inner_join_where(self, sql_command):
+    def inner_join_where(self, sql_command, no_arg):
         self.__sql_log('inner_join_where', sql_command, args='')
         self.cursor.execute(sql_command)
-        return self.__process_select_list_noargs(sql_command, 'inner_join_where')
+        return self.__process_select_list_noargs(sql_command, 'inner_join_where', no_arg)
 
-    def inner_inner_join_where(self, sql_command):
-        self.__sql_log('inner_inner_join_where', sql_command, args='')
+    def inner_join_where_and(self, sql_command, no_arg):
+        self.__sql_log('inner_join_where_and', sql_command, args='')
         self.cursor.execute(sql_command)
-        return self.__process_select_list_noargs(sql_command, 'inner_inner_join_where')
+        return self.__process_select_list_noargs(sql_command, 'inner_join_where_and', no_arg)
+
+    def inner_join_where_distinct(self, sql_command, no_arg):
+        self.__sql_log('inner_join_where_distinct', sql_command, args='')
+        self.cursor.execute(sql_command)
+        return self.__process_select_list_noargs(sql_command, 'inner_join_where_distinct', no_arg)
+
+    def inner_inner_join_where_distinct(self, sql_command, no_arg):
+        self.__sql_log('inner_inner_join_where_distinct', sql_command, args='')
+        self.cursor.execute(sql_command)
+        return self.__process_select_list_noargs(sql_command, 'inner_inner_join_where_distinct', no_arg)
 
     def update(self, sql_command, args):
         self.__sql_log('update', sql_command, args)
