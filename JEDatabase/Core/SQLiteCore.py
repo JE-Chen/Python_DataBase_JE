@@ -35,66 +35,34 @@ class SQLiteCore:
     def create_table(self, sql_command) -> None:
         self.SqliteControl.create_table(sql_command)
 
-    def insert_into(self, *args, field=None) -> None:
-
-        if field is None:
-            if len(args) == 1:
-                sql_command = '''INSERT INTO ''' + self.table_name + \
-                              ''' VALUES (?)'''
-            else:
-                sql_command = '''INSERT INTO ''' + self.table_name + \
-                              ''' VALUES (''' + '?,' * (
-                                      len(args) - 1) + '?' + ''')'''
+    def insert_into(self, *args) -> None:
+        if len(args) == 1:
+            sql_command = '''INSERT INTO ''' + self.table_name + \
+                          ''' VALUES (?)'''
         else:
-            if len(args) == 1:
-                sql_command = '''INSERT INTO ''' + self.table_name + \
-                              '''(''' + field + ''') VALUES (?)'''
-            else:
-                sql_command = '''INSERT INTO ''' + self.table_name + \
-                              '''(''' + field + ''') VALUES (''' + '?,' * (
-                                      len(args) - 1) + '?' + ''')'''
-
+            sql_command = '''INSERT INTO ''' + self.table_name + \
+                          ''' VALUES (''' + '?,' * (
+                                  len(args) - 1) + '?' + ''')'''
         self.SqliteControl.insert_into(sql_command, args)
 
-    def insert_into_ignore(self, *args, field=None) -> None:
-
-        if field is None:
-            if len(args) == 1:
-                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
-                              ''' VALUES (?)'''
-            else:
-                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
-                              ''' VALUES (''' + '?,' * (
-                                      len(args) - 1) + '?' + ''')'''
+    def insert_into_ignore(self, *args) -> None:
+        if len(args) == 1:
+            sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
+                          ''' VALUES (?)'''
         else:
-            if len(args) == 1:
-                sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
-                              '''(''' + field + ''') VALUES (?)'''
-            else:
-                sql_command = '''INSERT OR IGNORE INTO ''' + \
-                              self.table_name + '''(''' + field + ''') VALUES (''' + '?,' * \
-                              (len(args) - 1) + '?' + ''')'''
-
+            sql_command = '''INSERT OR IGNORE INTO ''' + self.table_name + \
+                          ''' VALUES (''' + '?,' * (
+                                  len(args) - 1) + '?' + ''')'''
         self.SqliteControl.insert_into_ignore(sql_command, args)
 
-    def insert_into_replace(self, *args, field=None) -> None:
-        if field is None:
-            if len(args) == 1:
-                sql_command = '''REPLACE INTO ''' + self.table_name + \
-                              ''' VALUES (?)'''
-            else:
-                sql_command = '''REPLACE INTO ''' + self.table_name + \
-                              ''' VALUES (''' + '?,' * (
-                                      len(args) - 1) + '?' + ''')'''
+    def insert_into_replace(self, *args) -> None:
+        if len(args) == 1:
+            sql_command = '''REPLACE INTO ''' + self.table_name + \
+                          ''' VALUES (?)'''
         else:
-            if len(args) == 1:
-                sql_command = '''REPLACE INTO ''' + self.table_name + \
-                              '''(''' + field + ''')VALUES (?)'''
-            else:
-                sql_command = '''REPLACE INTO ''' + self.table_name + \
-                              '''(''' + field + ''') VALUES (''' + '?,' * (
-                                      len(args) - 1) + '?' + ''')'''
-
+            sql_command = '''REPLACE INTO ''' + self.table_name + \
+                          ''' VALUES (''' + '?,' * (
+                                  len(args) - 1) + '?' + ''')'''
         self.SqliteControl.insert_into_replace(sql_command, args)
 
     def update(self, field, where_what, *args) -> None:
