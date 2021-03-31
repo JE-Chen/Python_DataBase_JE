@@ -8,7 +8,7 @@ class TestDatabase(unittest.TestCase):
     def setUp(self) -> None:
         self.SQL = SQLiteCore(r'TestAccount.sqlite', table_name='Account')
         self.SQL.create_table(
-            'CREATE TABLE IF NOT EXISTS Account(id PRIMARY KEY ,email VARCHAR(50),password VARCHAR(15))')
+            'CREATE TABLE IF NOT EXISTS Account(id VARCHAR(20),email VARCHAR(50),password VARCHAR(15))')
 
     def tearDown(self) -> None:
         self.SQL.close()

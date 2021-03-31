@@ -1,50 +1,29 @@
 from JEDatabase.Core.SQLiteCore import SQLiteCore
 
-SQL = SQLiteCore(db_name=r'StudentSystemData.sqlite', table_name='StudentSystem')
+SQL = SQLiteCore(db_name=r'Employee.sqlite', table_name='Employee')
 
 SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS Account('
-    'PersonnelNumber VARCHAR(20) PRIMARY KEY ,'
-    'Password VARCHAR(20))')
+    'CREATE TABLE IF NOT EXISTS EMPLOYEE(FNAME VARCHAR(20),MINT VARCHAR(20),LNAME VARCHAR(20),'
+    'SSN VARCHAR(20),BDATE VARCHAR(20),ADDRESS VARCHAR(20),SEX VARCHAR(20),SALARY INTEGER(20),'
+    'SUPERSSN VARCHAR(20),DNO VARCHAR(20))')
 
 SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS PersonnelDetail('
-    'PersonnelNumber VARCHAR(20) PRIMARY KEY ,'
-    'PersonnelName VARCHAR(20),'
-    'EnrollYear VARCHAR(10))')
+    'CREATE TABLE IF NOT EXISTS DEPARTMENT(DNAME VARCHAR(20),DNUMBER VARCHAR(20),'
+    'MGRSSN VARCHAR(20),MGRSTARTDATE VARCHAR(20))')
 
 SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS LessonDetail('
-    'LessonCode VARCHAR (10) PRIMARY KEY ,'
-    'LessonName VARCHAR (20),'
-    'LessonCredit VARCHAR (5),'
-    'LessonProfessor VARCHAR (20),'
-    'LessonType VARCHAR (3))')
+    'CREATE TABLE IF NOT EXISTS DEPT_LOCATION(DNUMBER VARCHAR(20),DLOCATION VARCHAR(20))')
 
 SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS SemesterLesson('
-    'LessonCode VARCHAR (10) PRIMARY KEY,'
-    'PersonnelNumber VARCHAR(20),'
-    'Semester VARCHAR(5))')
+    'CREATE TABLE IF NOT EXISTS PROJECT(PNAME VARCHAR(20),PNUMBER VARCHAR(20),'
+    'PLOCATION VARCHAR(20),DNUM VARCHAR(20))')
 
 SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS LessonContent('
-    'LessonCode VARCHAR(10) PRIMARY KEY ,'
-    'LessonName VARCHAR(20),'
-    'LessonContent VARCHAR(3000),'
-    'Semester VARCHAR (5))')
+    'CREATE TABLE IF NOT EXISTS WORKS_ON(ESSN VARCHAR(20),PNQ VARCHAR(20),'
+    'HOURS VARCHAR(20))')
 
 SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS LessonGrade('
-    'LessonCode VARCHAR(20) PRIMARY KEY ,'
-    'PersonnelNumber VARCHAR(20),'
-    'Grade VARCHAR(5),'
-    'Semester VARCHAR(5),'
-    'LessonProfessor VARCHAR(20))')
-
-SQL.create_table(
-    'CREATE TABLE IF NOT EXISTS PersonnelAccess('
-    'PersonnelNumber VARCHAR(20) PRIMARY KEY ,'
-    'Access VARCHAR(10))')
+    'CREATE TABLE IF NOT EXISTS DEPENDENT(ESSN VARCHAR(20),DEPARTMENT_NAME VARCHAR(20),'
+    'SEX VARCHAR(20),BDATE VARCHAR(20),RELATIONSHIP VARCHAR(20))')
 
 SQL.close()

@@ -20,7 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Test/Book.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/CreateTestBookDatabase.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/Employee.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0f5a4b9-1593-48e2-b678-91df3f3d47cf.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/CreateTestDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CreateTestDatabase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/StudentSystemData.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/UnitTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/UnitTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +71,11 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunConfigurationTargetLRU" value="ffdd084b-4e5c-49cf-a52a-cba2e4875fd7" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../WebProgram/NKNUSystem" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python_Gmail_JE" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,6 +86,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test" />
       <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\JEDatabase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -82,7 +97,34 @@
       <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.TestControl">
+  <component name="RunManager" selected="Python.CreateTestDatabase (1)">
+    <configuration name="EMPLOYEE.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="6d1f7431-668e-49bf-864f-7cc04eb3cf65/schema/main/table/EMPLOYEE.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateTestBookDatabase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python_DataBase_JE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/CreateTestBookDatabase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="CreateTestDatabase (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_DataBase_JE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,28 +139,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/CreateTestDatabase.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CreateTestDatabase" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python_DataBase_JE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test\CreateTestDatabase.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,21 +169,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for UnitTest.TestDatabase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="Python_DataBase_JE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;UnitTest.TestDatabase&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests in UnitTest.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Python_DataBase_JE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,19 +185,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Database Script.EMPLOYEE.sql" />
       <item itemvalue="Python.CreateTestDatabase (1)" />
-      <item itemvalue="Python.CreateTestDatabase" />
       <item itemvalue="Python.TestControl" />
-      <item itemvalue="Python tests.Unittests for UnitTest.TestDatabase" />
+      <item itemvalue="Python.CreateTestBookDatabase" />
       <item itemvalue="Python tests.Unittests in UnitTest.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CreateTestDatabase (1)" />
+        <item itemvalue="Python.CreateTestBookDatabase" />
+        <item itemvalue="Database Script.EMPLOYEE.sql" />
         <item itemvalue="Python.TestControl" />
         <item itemvalue="Python tests.Unittests in UnitTest.py" />
-        <item itemvalue="Python tests.Unittests for UnitTest.TestDatabase" />
-        <item itemvalue="Python.CreateTestDatabase" />
-        <item itemvalue="Python.CreateTestDatabase (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +248,10 @@
       <workItem from="1614817550708" duration="595000" />
       <workItem from="1614932643738" duration="665000" />
       <workItem from="1614938924699" duration="805000" />
+      <workItem from="1616071748444" duration="112000" />
+      <workItem from="1616071902689" duration="9982000" />
+      <workItem from="1616395444852" duration="4577000" />
+      <workItem from="1617088502858" duration="9006000" />
     </task>
     <servers />
   </component>
@@ -268,13 +277,14 @@
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$hash.coverage" NAME="hash Coverage Results" MODIFIED="1607268730491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JEDatabase/Models" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$Unittests_for_UnitTest_TestDatabase.coverage" NAME="Unittests for UnitTest.TestDatabase Coverage Results" MODIFIED="1608890830134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$Unittests_in_UnitTest_py.coverage" NAME="Unittests in UnitTest.py Coverage Results" MODIFIED="1608891093424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
-    <SUITE FILE_PATH="coverage/Python_DataBase_JE$CreateTestDatabase__1_.coverage" NAME="CreateTestDatabase (1) Coverage Results" MODIFIED="1608891756216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
+    <SUITE FILE_PATH="coverage/Python_DataBase_JE$CreateTestDatabase__1_.coverage" NAME="CreateTestDatabase (1) Coverage Results" MODIFIED="1617090294123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$SQL_Test.coverage" NAME="SQL_Test Coverage Results" MODIFIED="1607096448058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$TestControl.coverage" NAME="TestControl Coverage Results" MODIFIED="1610627124350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$Test.coverage" NAME="Test Coverage Results" MODIFIED="1608214330240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$Test__1_.coverage" NAME="Test (1) Coverage Results" MODIFIED="1607000413926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$Unittests_for_UnitTest_TestDatabase_testSelect.coverage" NAME="Unittests for UnitTest.TestDatabase.testSelect Coverage Results" MODIFIED="1607480696047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$SqliteControl.coverage" NAME="SqliteControl Coverage Results" MODIFIED="1607442617198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JEDatabase/Models" />
+    <SUITE FILE_PATH="coverage/Python_DataBase_JE$CreateTestBookDatabase.coverage" NAME="CreateTestBookDatabase Coverage Results" MODIFIED="1617090287820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/Python_DataBase_JE$SQLiteCore.coverage" NAME="SQLiteCore Coverage Results" MODIFIED="1608196954968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/JEDatabase/Core" />
   </component>
 </project>
