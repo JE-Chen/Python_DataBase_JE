@@ -1,5 +1,6 @@
 import datetime
 import sqlite3
+import threading
 
 from JELogSystem import LogSystem
 
@@ -24,7 +25,7 @@ class SqliteControl:
         # 獲取遊標cursor
         self.cursor = self.connect.cursor()
         # LogSystem https://github.com/JE-Chen/Python_LogSystem
-        self.LogSystem = LogSystem()
+        self.LogSystem = LogSystem(threading.Lock)
 
     def __process_select_list(self, sql_command, args, what_select):
         """
@@ -40,7 +41,7 @@ class SqliteControl:
         # import itertools
         # result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
-        self.LogSystem.debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
+        self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
     def __process_select_list_noargs(self, sql_command, what_select, no_arg):
@@ -57,11 +58,10 @@ class SqliteControl:
             import itertools
             result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
-        self.LogSystem.debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
+        self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
-    @staticmethod
-    def __sql_log(sql_command_type, sql_command, args):
+    def __sql_log(self, sql_command_type, sql_command, args):
         """
         :param sql_command_type: what sql command
         :param sql_command: full sql command
@@ -69,7 +69,7 @@ class SqliteControl:
         """
         print(sql_command, args)
         print('SqliteControl : ', sql_command_type, ' in ', datetime.datetime.now(), '\n', sep=' ')
-        LogSystem().debug('SqliteControl : ' + sql_command_type + ' in ' + str(datetime.datetime.now()) + ' \n')
+        self.LogSystem.log_debug('SqliteControl : ' + sql_command_type + ' in ' + str(datetime.datetime.now()) + ' \n')
 
     def create_table(self, sql_command):
         """
