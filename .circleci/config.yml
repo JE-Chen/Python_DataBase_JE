@@ -9,20 +9,17 @@ jobs:
     steps:
       - checkout
       - run:
-          command: pip install --user JEDatabase
-          name: pip JEDatabase
-      - run:
-          command: pip install --user JELogSystem
-          name: pip JELogSystem
+          command: pip install --user -r requirements.txt
+          name: pip requirements
       - run:
           command: python Test/CreateTestDatabase.py
-          name: Test
+          name: Test create database
       - run:
           command: python Test/UnitTest.py
-          name: UnitTest
+          name: Run unitTest
       - run:
           command: python Test/TestControl.py
-          name: TestControl
+          name: Test control database
 
 workflows:
   version: 2
