@@ -1,8 +1,15 @@
 import datetime
 import sqlite3
+import sys
 import threading
 
-from JELogSystem import LogSystem
+isImportJELogSystemSuccess = False
+
+try:
+    from JELogSystem import LogSystem
+    isImportJELogSystemSuccess = True
+except ImportError:
+    print("Log is disable install JELogSystem to open", file=sys.stderr)
 
 """
 Use SQLiteCore not this class
@@ -12,20 +19,18 @@ this class is a function class for SQLiteCore
 
 class SqliteControl:
 
-    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'Test'):
+    def __init__(self, db_name: str = 'test.sqlite'):
         """
         :param db_name: Database's name
-        :param table_name: Control table name
         """
         self.db_name = db_name
-        self.table_name = table_name
         # how many col
         self.value_count = 1
-        self.connect = sqlite3.connect(db_name, check_same_thread=True)  # 這裡是連線上一個資料庫如果沒有這個資料庫的話就會建立一個
-        # 獲取遊標cursor
+        self.connect = sqlite3.connect(db_name, check_same_thread=True)
         self.cursor = self.connect.cursor()
         # LogSystem https://github.com/JE-Chen/Python_LogSystem
-        self.LogSystem = LogSystem(threading.Lock)
+        if isImportJELogSystemSuccess:
+            self.LogSystem = LogSystem(threading.Lock)
 
     def __process_select_list(self, sql_command, args, what_select):
         """
@@ -41,7 +46,8 @@ class SqliteControl:
         # import itertools
         # result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
-        self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
+        if self.LogSystem is not None:
+            self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
     def __process_select_list_noargs(self, sql_command, what_select, no_arg):
@@ -58,7 +64,8 @@ class SqliteControl:
             import itertools
             result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
-        self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
+        if self.LogSystem is not None:
+            self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
     def __sql_log(self, sql_command_type, sql_command, args):
@@ -69,7 +76,8 @@ class SqliteControl:
         """
         print(sql_command, args)
         print('SqliteControl : ', sql_command_type, ' in ', datetime.datetime.now(), '\n', sep=' ')
-        self.LogSystem.log_debug('SqliteControl : ' + sql_command_type + ' in ' + str(datetime.datetime.now()) + ' \n')
+        if self.LogSystem is not None:
+            self.LogSystem.log_debug('SqliteControl : ' + sql_command_type + ' in ' + str(datetime.datetime.now()) + ' \n')
 
     def create_table(self, sql_command):
         """

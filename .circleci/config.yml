@@ -20,6 +20,9 @@ jobs:
       - run:
           command: python Test/TestControl.py
           name: Test control database
+      - run:
+          command: python Test/DatabaseTimeTest.py
+          name: Test use time
 
 workflows:
   version: 2

@@ -11,7 +11,7 @@ class SQLiteCore:
         :type table_name: str
         """
         try:
-            self.SqliteControl = SqliteControl(db_name, table_name)
+            self.SqliteControl = SqliteControl(db_name)
             self.table_name = table_name
             self.select_prefix = select_prefix
             self.value_count = 2

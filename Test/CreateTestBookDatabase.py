@@ -2,13 +2,6 @@ from JEDatabase.Core.SQLiteCore import SQLiteCore
 
 SQL = SQLiteCore(db_name=r'Book.sqlite', table_name='Book')
 
-'''
-Hotel(hotelNo, hotelName, hotelType, hotelAddress, hotelCity, numRoom)
-Room(roomNo, hotelNo, roomPrice)
-Booking(bookingNo, hotelNo, guestNo, checkIn, checkOut, totalGuest, roomNo)
-Guest(guestNo, firstName, lastName, guestAddress)
-'''
-
 SQL.create_table(
     'CREATE TABLE IF NOT EXISTS Hotel(hotelNo integer(5),hotelName VARCHAR(10),hotelType VARCHAR(10),'
     'hotelAddress VARCHAR(20),hotelCity VARCHAR(10),numRoom integer(5),PRIMARY KEY(hotelNo))')
