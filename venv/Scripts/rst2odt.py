@@ -1,4 +1,4 @@
-#!d:\workspaces\program workspace\python\project\python_database_je\venv\scripts\python.exe
+#!D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\venv\Scripts\python.exe
 
 # $Id: rst2odt.py 5839 2009-01-07 19:09:28Z dkuhlman $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

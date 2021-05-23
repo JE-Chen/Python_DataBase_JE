@@ -1,4 +1,4 @@
-#!d:\workspaces\program workspace\python\project\python_database_je\venv\scripts\python.exe
+#!D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\venv\Scripts\python.exe
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde

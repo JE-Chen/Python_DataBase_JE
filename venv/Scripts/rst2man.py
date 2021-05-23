@@ -1,4 +1,4 @@
-#!d:\workspaces\program workspace\python\project\python_database_je\venv\scripts\python.exe
+#!D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\venv\Scripts\python.exe
 
 # Author:
 # Contact: grubert@users.sf.net

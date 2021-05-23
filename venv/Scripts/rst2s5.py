@@ -1,4 +1,4 @@
-#!d:\workspaces\program workspace\python\project\python_database_je\venv\scripts\python.exe
+#!D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\venv\Scripts\python.exe
 
 # $Id: rst2s5.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: Chris Liechti <cliechti@gmx.net>
