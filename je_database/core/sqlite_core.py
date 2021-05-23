@@ -219,4 +219,3 @@ class sqlite_core:
     # call sql control to close
     def close(self):
         self.sqlite_control.close()
-

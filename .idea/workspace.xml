@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="" />
+    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/je_database/core/sqlite_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/core/sqlite_core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/je_database/modules/sqlite_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/modules/sqlite_control.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,13 +72,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python_Log_System_JE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python_Gmail_JE" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -259,7 +264,7 @@
       <workItem from="1621596653100" duration="6711000" />
       <workItem from="1621612749397" duration="2474000" />
       <workItem from="1621700601471" duration="6905000" />
-      <workItem from="1621745706438" duration="2752000" />
+      <workItem from="1621745706438" duration="4711000" />
     </task>
     <servers />
   </component>

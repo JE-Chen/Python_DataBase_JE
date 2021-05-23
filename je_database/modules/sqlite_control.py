@@ -6,11 +6,11 @@ import threading
 is_import_success = False
 
 try:
-    from je_log_system import log_system
+    from je_log_system import LogSystem
 
     is_import_success = True
 except ImportError:
-    print("Log is disable install JELogSystem to open", file=sys.stderr)
+    print("Log is disable install je_log_system to open", file=sys.stderr)
 
 """
 Use SQLiteCore not this class
@@ -29,7 +29,7 @@ class sqlite_control:
         self.value_count = 1
         self.connect = sqlite3.connect(db_name, check_same_thread=True)
         self.cursor = self.connect.cursor()
-        # LogSystem https://github.com/JE-Chen/Python_LogSystem
+        # je_log_system https://github.com/JE-Chen/Python_LogSystem
         if is_import_success:
             self.log_system = LogSystem(threading.Lock)
 
@@ -91,4 +91,3 @@ class sqlite_control:
     def close(self):
         self.cursor.close()
         self.connect.close()
-
