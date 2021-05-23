@@ -12,16 +12,16 @@ jobs:
           command: pip install --user -r requirements.txt
           name: pip requirements
       - run:
-          command: python test/test_create_database.py
+          command: python Test/test_create_database.py
           name: Test create database
       - run:
-          command: python test/test_unittest.py
+          command: python Test/test_unittest.py
           name: Run unitTest
       - run:
-          command: python test/test_control.py
+          command: python Test/test_control.py
           name: Test control database
       - run:
-          command: python test/test_database_command_time.py
+          command: python Test/test_database_command_time.py
           name: Test use time
 
 workflows:

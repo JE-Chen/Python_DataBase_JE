@@ -19,30 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/008973d9-3d02-4920-b34f-571dad308ffc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/061264fa-5547-45fe-9d9c-76aa10b59e1f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d6cc8d6-57b0-4521-ac9d-6a6c8ec42daa.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/daf6ed11-9aed-4dff-8d74-b721bc77dab4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5c0eda7-f313-473c-9e4d-505e9f774173.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Core/SQLiteCore.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/core/sqlite_core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/core/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/SqliteControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/modules/sqlite_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/Models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEDatabase/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/CreateTestBookDatabase.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/CreateTestDatabase.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_create_database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/DatabaseTimeTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_database_command_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Test.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/TestControl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/UnitTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_unittest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -282,7 +259,7 @@
       <workItem from="1621596653100" duration="6711000" />
       <workItem from="1621612749397" duration="2474000" />
       <workItem from="1621700601471" duration="6905000" />
-      <workItem from="1621745706438" duration="323000" />
+      <workItem from="1621745706438" duration="621000" />
     </task>
     <servers />
   </component>
