@@ -23,6 +23,9 @@ jobs:
       - run:
           command: python Test/test_database_command_time.py
           name: Test use time
+      - run:
+          command: python Test/test_log.py
+          name: Test log system
 
 workflows:
   version: 2

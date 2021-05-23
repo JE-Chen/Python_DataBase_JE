@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/je_database.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/je_database.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/je_database.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/je_database.egg-info/top_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +92,7 @@
       <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_log">
+  <component name="RunManager" selected="Python tests.Unittests in Test">
     <configuration name="test_control" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_DataBase_JE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -197,8 +191,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_log" />
         <item itemvalue="Python tests.Unittests in Test" />
+        <item itemvalue="Python.test_log" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Python.test_database_command_time" />
         <item itemvalue="Python.test_control" />
@@ -266,7 +260,7 @@
       <workItem from="1621596653100" duration="6711000" />
       <workItem from="1621612749397" duration="2474000" />
       <workItem from="1621700601471" duration="6905000" />
-      <workItem from="1621745706438" duration="6924000" />
+      <workItem from="1621745706438" duration="7346000" />
     </task>
     <servers />
   </component>

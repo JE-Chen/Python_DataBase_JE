@@ -3,12 +3,12 @@ import sqlite3
 import sys
 import threading
 
-isImportJELogSystemSuccess = False
+is_import_success = False
 
 try:
-    from JELogSystem import LogSystem
+    from je_log_system import log_system
 
-    isImportJELogSystemSuccess = True
+    is_import_success = True
 except ImportError:
     print("Log is disable install JELogSystem to open", file=sys.stderr)
 
@@ -30,8 +30,8 @@ class sqlite_control:
         self.connect = sqlite3.connect(db_name, check_same_thread=True)
         self.cursor = self.connect.cursor()
         # LogSystem https://github.com/JE-Chen/Python_LogSystem
-        if isImportJELogSystemSuccess:
-            self.LogSystem = LogSystem(threading.Lock)
+        if is_import_success:
+            self.log_system = LogSystem(threading.Lock)
 
     def process_select_list(self, sql_command, args, what_select):
         """
@@ -47,8 +47,8 @@ class sqlite_control:
         # import itertools
         # result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
-        if self.LogSystem is not None:
-            self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
+        if self.log_system is not None:
+            self.log_system.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
     def process_select_list_noargs(self, sql_command, what_select, no_arg):
@@ -65,8 +65,8 @@ class sqlite_control:
             import itertools
             result_list = list(itertools.chain(*result_list))
         print('SqliteControl : ' + what_select, result_list, '\n')
-        if self.LogSystem is not None:
-            self.LogSystem.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
+        if self.log_system is not None:
+            self.log_system.log_debug('SqliteControl : ' + what_select + ' ' + str(result_list) + ' \n')
         return result_list
 
     def exec_sql_with_log(self, sql_command_type, sql_command, args):
@@ -77,8 +77,8 @@ class sqlite_control:
         """
         print(sql_command, args)
         print('SqliteControl : ', sql_command_type, ' in ', datetime.datetime.now(), '\n', sep=' ')
-        if self.LogSystem is not None:
-            self.LogSystem.log_debug(
+        if self.log_system is not None:
+            self.log_system.log_debug(
                 'SqliteControl : ' + sql_command_type + ' in ' + str(datetime.datetime.now()) + ' \n')
         self.cursor.execute(sql_command, args)
         self.connect.commit()
