@@ -1,2 +1,2 @@
-JEDatabase
+je_database
 JELogSystem

@@ -1,6 +1,6 @@
-from JEDatabase.Core.SQLiteCore import SQLiteCore
+from je_database.core.sqlite_core import sqlite_core
 
-SQL = SQLiteCore(db_name=r'Employee.sqlite', table_name='Employee')
+SQL = sqlite_core(db_name=r'Employee.sqlite', table_name='Employee')
 
 SQL.create_table(
     'CREATE TABLE IF NOT EXISTS EMPLOYEE(FNAME VARCHAR(20),MINT VARCHAR(20),LNAME VARCHAR(20),'

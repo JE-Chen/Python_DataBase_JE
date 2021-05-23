@@ -18,7 +18,7 @@ this class is a function class for SQLiteCore
 """
 
 
-class SqliteControl:
+class sqlite_control:
 
     def __init__(self, db_name: str = 'test.sqlite'):
         """

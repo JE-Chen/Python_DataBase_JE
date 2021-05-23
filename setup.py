@@ -4,11 +4,11 @@ with open("README.md", "r") as README:
     long_description = README.read()
 
 setuptools.setup(
-    name="JEDatabase",
-    version="0.0.0.0.28",
+    name="je_database",
+    version="0.0.0.0.1",
     author="JE-Chen",
     author_email="zenmailman@gmail.com",
-    description="JE use Sqlite",
+    description="temp string",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/JE-Chen/Python_DataBase_JE",
