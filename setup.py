@@ -5,7 +5,7 @@ with open("README.md", "r") as README:
 
 setuptools.setup(
     name="je_database",
-    version="0.0.0.0.1",
+    version="0.0.0.0.2",
     author="JE-Chen",
     author_email="zenmailman@gmail.com",
     description="temp string",
