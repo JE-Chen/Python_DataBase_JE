@@ -3,12 +3,13 @@ import sqlite3
 import sys
 import threading
 
-is_import_success = True
+is_import_success = False
 
 try:
     from je_log_system import LogSystem
+
+    is_import_success = True
 except ImportError:
-    is_import_success = False
     print("Log is disable install je_log_system to open", file=sys.stderr)
 
 """
