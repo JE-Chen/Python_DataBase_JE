@@ -1,2 +1,2 @@
 je_database
-JELogSystem
+je_log_system
