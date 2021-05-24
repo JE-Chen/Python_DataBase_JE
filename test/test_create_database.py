@@ -1,29 +1,29 @@
 from je_database.core.sqlite_core import sqlite_core
 
-SQL = sqlite_core(db_name=r'Employee.sqlite', table_name='Employee')
+sql = sqlite_core(db_name=r'Employee.sqlite', table_name='Employee')
 
-SQL.create_table(
+sql.create_table(
     'CREATE TABLE IF NOT EXISTS EMPLOYEE(FNAME VARCHAR(20),MINT VARCHAR(20),LNAME VARCHAR(20),'
     'SSN VARCHAR(20),BDATE VARCHAR(20),ADDRESS VARCHAR(20),SEX VARCHAR(20),SALARY INTEGER(20),'
     'SUPERSSN VARCHAR(20),DNO VARCHAR(20))')
 
-SQL.create_table(
+sql.create_table(
     'CREATE TABLE IF NOT EXISTS DEPARTMENT(DNAME VARCHAR(20),DNUMBER VARCHAR(20),'
     'MGRSSN VARCHAR(20),MGRSTARTDATE VARCHAR(20))')
 
-SQL.create_table(
+sql.create_table(
     'CREATE TABLE IF NOT EXISTS DEPT_LOCATION(DNUMBER VARCHAR(20),DLOCATION VARCHAR(20))')
 
-SQL.create_table(
+sql.create_table(
     'CREATE TABLE IF NOT EXISTS PROJECT(PNAME VARCHAR(20),PNUMBER VARCHAR(20),'
     'PLOCATION VARCHAR(20),DNUM VARCHAR(20))')
 
-SQL.create_table(
+sql.create_table(
     'CREATE TABLE IF NOT EXISTS WORKS_ON(ESSN VARCHAR(20),PNQ VARCHAR(20),'
     'HOURS VARCHAR(20))')
 
-SQL.create_table(
+sql.create_table(
     'CREATE TABLE IF NOT EXISTS DEPENDENT(ESSN VARCHAR(20),DEPARTMENT_NAME VARCHAR(20),'
     'SEX VARCHAR(20),BDATE VARCHAR(20),RELATIONSHIP VARCHAR(20))')
 
-SQL.close()
+sql.close()

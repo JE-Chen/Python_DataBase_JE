@@ -13,22 +13,22 @@ class TestDatabase(unittest.TestCase):
     def tearDown(self) -> None:
         self.SQL.close()
 
-    def testInsert(self):
+    def test_insert(self):
         self.SQL.insert_into_ignore(1, 'test1@gmail.com', 'test_password')
         self.SQL.insert_into_ignore(2, 'test2@gmail.com', 'test_password')
         self.SQL.insert_into_ignore(3, 'test3@gmail.com', 'test_password')
 
-    def testDelete(self):
+    def test_delete(self):
         self.SQL.delete('email', 'test1@gmail.com')
 
-    def testSelect(self):
+    def test_select(self):
         self.SQL.select_form()
         self.SQL.select_distinct()
 
-    def testUpdate(self):
+    def test_update(self):
         self.SQL.update('email', 'email', 'new_test@gmail.com', 'test_password')
 
-    def testSelectAccount(self):
+    def test_select_account(self):
         self.SQL.select_prefix = '*'
         self.SQL.table_name = 'Account'
         self.SQL.select_account('email', 'password', 'new_test@gmail.com', 'test_password')

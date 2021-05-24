@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="" />
+    <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_create_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_create_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_database_command_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_database_command_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_unittest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_unittest.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,8 +53,8 @@
     <setting file="file://$PROJECT_DIR$/.circleci/config.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/je_database/core/sqlite_core.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/je_database/modules/sqlite_control.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Test/test_create_database.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Test/test_control.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/test_create_database.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/test_control.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JupyterTrust" id="0f352718-e07e-4096-b105-c276b57d4d68" />
   <component name="ProjectId" id="1l8fLXXeIcdt66xM0uhKjDzbbOx" />
@@ -92,7 +98,7 @@
       <recent name="D:\WorkSpaces\Program WorkSpace\Python\Project\Python_DataBase_JE\Test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in Test">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="test_control" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_DataBase_JE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,18 +173,18 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in Test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="Python_DataBase_JE" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -186,14 +192,14 @@
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Python.test_database_command_time" />
       <item itemvalue="Python.test_control" />
-      <item itemvalue="Python tests.Unittests in Test" />
       <item itemvalue="Python.test_log" />
+      <item itemvalue="Python tests.Unittests in test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests in Test" />
-        <item itemvalue="Python.test_log" />
         <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="Python tests.Unittests in test" />
+        <item itemvalue="Python.test_log" />
         <item itemvalue="Python.test_database_command_time" />
         <item itemvalue="Python.test_control" />
       </list>
@@ -261,6 +267,8 @@
       <workItem from="1621612749397" duration="2474000" />
       <workItem from="1621700601471" duration="6905000" />
       <workItem from="1621745706438" duration="8123000" />
+      <workItem from="1621816120515" duration="2786000" />
+      <workItem from="1621851607317" duration="174000" />
     </task>
     <servers />
   </component>
