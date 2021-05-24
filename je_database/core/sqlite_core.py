@@ -5,7 +5,7 @@ from je_database.modules.sqlite_control import sqlite_control
 
 class sqlite_core:
 
-    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'Test', select_prefix: str = '*'):
+    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'test', select_prefix: str = '*'):
         """
         :type db_name: str
         :type table_name: str

@@ -12,20 +12,20 @@ jobs:
           command: pip install --user -r requirements.txt
           name: pip requirements
       - run:
-          command: python Test/test_create_database.py
-          name: Test create database
+          command: python test/test_create_database.py
+          name: test create database
       - run:
-          command: python Test/test_unittest.py
+          command: python test/test_unittest.py
           name: Run unitTest
       - run:
-          command: python Test/test_control.py
-          name: Test control database
+          command: python test/test_control.py
+          name: test control database
       - run:
-          command: python Test/test_database_command_time.py
-          name: Test use time
+          command: python test/test_database_command_time.py
+          name: test use time
       - run:
-          command: python Test/test_log.py
-          name: Test log system
+          command: python test/test_log.py
+          name: test log system
 
 workflows:
   version: 2
