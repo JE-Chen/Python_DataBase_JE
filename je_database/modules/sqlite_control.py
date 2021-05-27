@@ -20,14 +20,14 @@ this class is a function class for SQLiteCore
 
 class sqlite_control:
 
-    def __init__(self, db_name: str = 'test.sqlite'):
+    def __init__(self, db_name: str = 'test.sqlite', check_same_thread=True):
         """
         :param db_name: Database's name
         """
         self.db_name = db_name
         # how many col
         self.value_count = 1
-        self.connect = sqlite3.connect(db_name, check_same_thread=True)
+        self.connect = sqlite3.connect(db_name, check_same_thread=check_same_thread)
         self.cursor = self.connect.cursor()
         # je_log_system https://github.com/JE-Chen/Python_LogSystem
         if is_import_success:

@@ -6,7 +6,7 @@ from je_database.core.sqlite_core import sqlite_core
 class TestDatabase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.SQL = sqlite_core(r'TestAccount.sqlite', table_name='Account')
+        self.SQL = sqlite_core(r'TestAccount.sqlite', table_name='Account', check_same_thread=True)
         self.SQL.create_table(
             'CREATE TABLE IF NOT EXISTS Account(id VARCHAR(20),email VARCHAR(50),password VARCHAR(15))')
 

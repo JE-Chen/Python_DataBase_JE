@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9f2fe1aa-e624-4a95-8e19-b6465f556921" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/je_database/core/sqlite_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/core/sqlite_core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/je_database/modules/sqlite_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/je_database/modules/sqlite_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_control.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_create_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_create_database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_database_command_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_database_command_time.py" afterDir="false" />
@@ -51,10 +54,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.circleci/config.yml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/je_database/core/sqlite_core.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/je_database/modules/sqlite_control.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/test_create_database.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/test_control.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/je_database/core/sqlite_core.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/je_database/modules/sqlite_control.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JupyterTrust" id="0f352718-e07e-4096-b105-c276b57d4d68" />
   <component name="ProjectId" id="1l8fLXXeIcdt66xM0uhKjDzbbOx" />
@@ -74,7 +77,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python_Gmail_JE" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -190,15 +193,15 @@
     </configuration>
     <list>
       <item itemvalue="Docker.Dockerfile" />
-      <item itemvalue="Python.test_database_command_time" />
       <item itemvalue="Python.test_control" />
+      <item itemvalue="Python.test_database_command_time" />
       <item itemvalue="Python.test_log" />
       <item itemvalue="Python tests.Unittests in test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Python tests.Unittests in test" />
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Python.test_log" />
         <item itemvalue="Python.test_database_command_time" />
         <item itemvalue="Python.test_control" />
@@ -269,6 +272,12 @@
       <workItem from="1621745706438" duration="8123000" />
       <workItem from="1621816120515" duration="2786000" />
       <workItem from="1621851607317" duration="174000" />
+      <workItem from="1621856727759" duration="627000" />
+      <workItem from="1621859073263" duration="594000" />
+      <workItem from="1622036576636" duration="1965000" />
+      <workItem from="1622105614274" duration="364000" />
+      <workItem from="1622116824078" duration="960000" />
+      <workItem from="1622125813342" duration="1506000" />
     </task>
     <servers />
   </component>

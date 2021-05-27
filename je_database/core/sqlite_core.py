@@ -5,13 +5,14 @@ from je_database.modules.sqlite_control import sqlite_control
 
 class sqlite_core:
 
-    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'test', select_prefix: str = '*'):
+    def __init__(self, db_name: str = 'test.sqlite', table_name: str = 'test', check_same_thread=True,
+                 select_prefix: str = '*'):
         """
         :type db_name: str
         :type table_name: str
         """
         try:
-            self.sqlite_control = sqlite_control(db_name)
+            self.sqlite_control = sqlite_control(db_name, check_same_thread)
             self.table_name = table_name
             self.select_prefix = select_prefix
             self.value_count = 2
